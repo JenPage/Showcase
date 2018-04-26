@@ -15,6 +15,7 @@ class DisplayController extends Controller
     public function index()
     {
         $displays = Display::all();
+
         return view('showcase::app.display.index', compact('displays'));
     }
 
@@ -44,7 +45,7 @@ class DisplayController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Display  $display
      * @return \Illuminate\Http\Response
      */
     public function show(Display $display)
@@ -55,7 +56,7 @@ class DisplayController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Display  $display
      * @return \Illuminate\Http\Response
      */
     public function edit(Display $display)
@@ -67,20 +68,20 @@ class DisplayController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Display  $display
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Display $display)
     {
         $display->fill($request->all());
 
-        return redirect()->route('showcase.display.index');
+        return redirect()->route('showcase.display.show', compact('display'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Display  $display
      * @return \Illuminate\Http\Response
      */
     public function destroy(Display $display)

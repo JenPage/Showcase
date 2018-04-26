@@ -14,7 +14,9 @@ class TrophyController extends Controller
      */
     public function index()
     {
-        //
+        $trophies = Trophy::all();
+
+        return view('showcase::app.trophy.index', compact('trophies'));
     }
 
     /**
@@ -24,7 +26,7 @@ class TrophyController extends Controller
      */
     public function create()
     {
-        //
+        return view('showcase::app.trophies.create');
     }
 
     /**
@@ -35,51 +37,57 @@ class TrophyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Trophy::create($request->all());
+
+        return redirect()->route('showcase.trophies.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function show(Trophy $display)
+    public function show(Trophy $trophy)
     {
-        //
+        return view('showcase::app.trophy.show', compact('trophy'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \Showcase\Display  $display
+     * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function edit(Trophy $display)
+    public function edit(Trophy $trophy)
     {
-        //
+        return view('showcase::app.trophy.edit', compact('trophy'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Showcase\Trophy  $display
+     * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trophy $display)
+    public function update(Request $request, Trophy $trophy)
     {
-        //
+        $trophy->fill($request->all());
+
+        return redirect()->route('showcase.trophies.show', compact('trophy'));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \Showcase\Trophy  $display
+     * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Trophy $display)
+    public function destroy(Trophy $trophy)
     {
-        //
+        $trophy->delete();
+
+        return redirect()->route('showcase.display.index');
     }
 }

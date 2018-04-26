@@ -1,0 +1,19 @@
+{
+    "name": "jantho1990/showcase",
+    "description": "A widget for showcasing cards of items in a panel or page.",
+    "authors": [
+        {
+            "name": "Josh Anthony",
+            "email": "jantho1990@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "classmap": [
+
+        ],
+        "psr-4": {
+            "Showcase\\": "src/"
+        }
+    }
+}

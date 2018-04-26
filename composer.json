@@ -7,7 +7,9 @@
             "email": "jantho1990@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "laracasts/flash": "^3.0"
+    },
     "autoload": {
         "classmap": [
 

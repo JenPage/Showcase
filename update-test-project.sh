@@ -10,3 +10,4 @@ cp -R ./src ./test-project/vendor/brokerexchange/showcase/src
 cp -R ./composer.json ./test-project/vendor/brokerexchange/showcase/composer.json
 cp -R ./composer.lock ./test-project/vendor/brokerexchange/showcase/composer.lock
 cp -R ./.gitignore ./test-project/vendor/brokerexchange/showcase/.gitignore
+echo "Test project updated!"

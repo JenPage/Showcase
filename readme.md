@@ -4,7 +4,23 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 > Still being developed!
 
-Todos:
+## Todos:
     - get to 1.0
         - add the admin section
         - create components for dropping in the view boxes
+
+## Install
+```
+git clone [the-url]
+composer install
+npm install
+```
+
+## Test Project
+To create a test project:
+`bash build-test-project.sh`
+
+> This can also be used to rebuild the test project if you messed something up.
+
+To update the test project with package changes:
+`bash update-test-project.sh`

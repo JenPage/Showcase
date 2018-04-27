@@ -15,6 +15,8 @@ class CreateDisplaysTable extends Migration
     {
         Schema::create(config('showcase.table_prefix').'displays', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('type');
             $table->timestamps();
         });
     }

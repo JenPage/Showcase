@@ -17,5 +17,15 @@
         "psr-4": {
             "Showcase\\": "src/"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Showcase\\App\\Providers\\ShowcaseProvider"
+            ]
+        }
     }
 }

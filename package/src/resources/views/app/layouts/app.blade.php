@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    @include('stylesheets')
-    @include('header-scripts')
+    @include('showcase::app.includes._stylesheets')
+    @include('showcase::app.includes._header-scripts')
 </head>
 <body>
-    @include('header')
+    @include('showcase::app.includes._header')
     @yield('content')
-    @include('footer')
+    @include('showcase::app.includes._footer')
 </body>
 </html>

@@ -18,6 +18,7 @@ class ShowcaseProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'showcase');
 
         $this->publishes([
+            __DIR__.'/../../config.php' => config_path('showcase.php'),            
             __DIR__.'/../../resources/views/public' => resource_path('/views/vendor/showcase'),
         ]);
     }

@@ -13,8 +13,9 @@ class ShowcaseProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../../routes.php');
-        $this->loadViewsFrom(__DIR__.'/../../../resources/views', 'showcase');
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', 'showcase');
 
         $this->publishes([
             __DIR__.'/../../resources/views/public' => resource_path('/views/vendor/showcase'),

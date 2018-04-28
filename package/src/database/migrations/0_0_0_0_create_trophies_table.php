@@ -19,7 +19,7 @@ class CreateTrophiesTable extends Migration
             $table->string('link');
             $table->string('image_url');
             $table->string('description', 55);
-            $table->foreign('display_id')->references('display');
+            $table->integer('display_id')->unsigned();
             $table->timestamps();
         });
     }

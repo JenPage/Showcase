@@ -1,0 +1,37 @@
+{
+    "name": "brokerexchange/showcase",
+    "description": "A widget for showcasing cards of items in a panel or page.",
+    "authors": [
+        {
+            "name": "Josh Anthony",
+            "email": "jantho1990@gmail.com"
+        }
+    ],
+    "require": {
+        "laracasts/flash": "^3.0",
+        "illuminate/database": "^5.6",
+        "doctrine/dbal": "^2.7",
+        "fzaninotto/faker": "^1.7",
+        "illuminate/filesystem": "^5.6",
+        "illuminate/pagination": "^5.6"
+    },
+    "autoload": {
+        "classmap": [
+            "src/database/seeds",
+            "src/database/factories"
+        ],
+        "psr-4": {
+            "Showcase\\": "src/"
+        }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Showcase\\App\\Providers\\ShowcaseProvider"
+            ]
+        }
+    }
+}

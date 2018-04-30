@@ -31,7 +31,7 @@ class TrophiesTableSeeder extends Seeder
         DB::table(config('showcase.table_prefix').'trophies')->insert([
             'name' => 'Sample Box Item',
             'link' => 'http://google.com',
-            'image_url' => 'https://lorempixel.com/300/200',
+            'image_url' => 'https://lorempixel.com/300/200/sports',
             'description' => 'A boring item which links somewhere.',
             'display_id' => 1,
             'created_at' => Carbon::now(),
@@ -40,7 +40,7 @@ class TrophiesTableSeeder extends Seeder
         DB::table(config('showcase.table_prefix').'trophies')->insert([
             'name' => 'Sample Sheet Item',
             'link' => 'http://google.com',
-            'image_url' => 'https://lorempixel.com/300/200',
+            'image_url' => 'https://lorempixel.com/300/200/sports',
             'description' => 'A boring item which links somewhere.',
             'display_id' => 2,
             'created_at' => Carbon::now(),

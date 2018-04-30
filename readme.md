@@ -1,6 +1,6 @@
 # Showcase
 
-A Laravel package which adds the ability to create "showcases", or view boxes which contain cards of items. It also includes an admin panel to manage showcases, which can only be accessed by a logged-in Auth user.
+A Laravel package which adds the ability to create "showcases", or view boxes which contain cards of items. It also includes an admin panel to manage showcases, which can only be accessed by a logged-in Auth user. Intended for use by Laravel 5.5+
 
 > Still being developed!
 
@@ -28,7 +28,9 @@ To update the test project with package changes:
 ### Authentication
 The test project generates Auth during the build. A default user is created with the test project:
 
-> homestead
-> secret
+> email: homestead, password: secret
 
 You will need this to access the Showcase admin panels, as they are secured behind the Auth middleware by default. This can be changed from the config file.
+
+## Assets
+To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project automagically.

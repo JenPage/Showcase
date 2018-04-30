@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="/vendor/showcase/app.css">

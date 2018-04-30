@@ -7,7 +7,9 @@
         <div class="col-md-8 col-md-offset-2">
             @foreach($displays as $display)
             <p>{{ $display->name }}</p>
-            <p>{{ $display->component_view }}</p>
+            @component("showcase::public.components.$display->component_view", [
+                'display' => $display
+            ])@endcomponent
             @endforeach
         </div>
     </div>

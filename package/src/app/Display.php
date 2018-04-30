@@ -22,6 +22,6 @@ class Display extends Model
 
     public function trophies()
     {
-        return $this->hasMany('trophies');
+        return $this->hasMany('Showcase\App\Trophy');
     }
 }

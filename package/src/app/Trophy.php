@@ -22,7 +22,7 @@ class Trophy extends Model
 
     public function display()
     {
-        return $this->belongsTo('display');
+        return $this->belongsTo('Showcase\App\Display');
     }
 
 }

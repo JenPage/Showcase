@@ -12,6 +12,11 @@ class Trophy extends Model
      */
     protected $table = 'trophies';
 
+    /**
+     * Allow mass assignment.
+     */
+    protected $guarded = [];
+
     public function __construct(array $attributes = array())
     {
         parent::__construct($attributes);

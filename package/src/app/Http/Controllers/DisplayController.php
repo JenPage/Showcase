@@ -39,7 +39,7 @@ class DisplayController extends Controller
     {
         Display::create($request->all());
 
-        return redirect()->route('showcase.display.index');
+        return redirect()->route('displays.index');
     }
 
     /**
@@ -73,9 +73,9 @@ class DisplayController extends Controller
      */
     public function update(Request $request, Display $display)
     {
-        $display->fill($request->all());
+        $display->update($request->all());
 
-        return redirect()->route('showcase.display.show', compact('display'));
+        return redirect()->route('displays.show', compact('display'));
     }
 
     /**
@@ -88,6 +88,6 @@ class DisplayController extends Controller
     {
         $display->delete();
 
-        return redirect()->route('showcase.display.index');
+        return redirect()->route('displays.index');
     }
 }

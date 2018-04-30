@@ -25,6 +25,8 @@ To create a test project:
 To update the test project with package changes:
 `bash update-test-project.sh`
 
+If you want to use a different DB, change the credentials at the top of `build-test-project.sh` to match your desired credentials.
+
 ### Authentication
 The test project generates Auth during the build. A default user is created with the test project:
 

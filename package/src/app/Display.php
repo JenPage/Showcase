@@ -12,6 +12,11 @@ class Display extends Model
      */
     protected $table = 'displays';
 
+    /**
+     * Allow mass assignment.
+     */
+    protected $guarded = [];
+
     public function __construct(array $attributes = array())
     {
         parent::__construct($attributes);

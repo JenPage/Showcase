@@ -18,6 +18,9 @@ sed -i '' "s/DB_PORT=3306/DB_PORT=$db_port/g" .env
 sed -i '' "s/DB_DATABASE=homestead/DB_DATABASE=$db_database/g" .env
 sed -i '' "s/DB_USERNAME=homestead/DB_USERNAME=$db_username/g" .env
 sed -i '' "s/DB_PASSWORD=secret/DB_PASSWORD=$db_password/g" .env
+sed -i '' "s|// \$this->call(UsersTableSeeder::class);|\$this->call(UsersTableSeeder::class);|" ./database/seeds/DatabaseSeeder.php
+cp ../UsersTableSeeder.php ./database/seeds/
+php artisan make:auth
 composer require brokerexchange/showcase=dev-feature/1.0
 cd ..
 bash update-test-project.sh

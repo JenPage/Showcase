@@ -20,5 +20,5 @@ return [
     | An array of existing application middleware you'd like Showcase routes to
     | pass through. This is required to use Showcase behind authentication.
     */
-    'middleware' => ['web'],
+    'middleware' => ['web', 'auth'],
 ];

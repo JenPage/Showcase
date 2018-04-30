@@ -2,7 +2,7 @@
 
 @section('content')
 <main class="container">
-    <h1>This is a test page, yo dawg</h1>
+    <h1>This is a test page, yo dawgfish</h1>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             @foreach($displays as $display)

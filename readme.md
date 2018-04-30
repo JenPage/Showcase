@@ -24,3 +24,11 @@ To create a test project:
 
 To update the test project with package changes:
 `bash update-test-project.sh`
+
+### Authentication
+The test project generates Auth during the build. A default user is created with the test project:
+
+> homestead
+> secret
+
+You will need this to access the Showcase admin panels, as they are secured behind the Auth middleware by default. This can be changed from the config file.

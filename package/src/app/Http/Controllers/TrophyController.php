@@ -3,30 +3,19 @@
 namespace Showcase\App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Showcase\App\Display;
 use Showcase\App\Trophy;
 
 class TrophyController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $trophies = Trophy::all();
-
-        return view('showcase::app.trophy.index', compact('trophies'));
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Display $display)
     {
-        return view('showcase::app.trophies.create');
+        return view('showcase::app.trophy.create', compact('display'));
     }
 
     /**
@@ -35,22 +24,11 @@ class TrophyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Display $display)
     {
         Trophy::create($request->all());
 
-        return redirect()->route('showcase.trophies.index');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \Showcase\App\Trophy  $trophy
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Trophy $trophy)
-    {
-        return view('showcase::app.trophy.show', compact('trophy'));
+        return redirect()->route('displays.show', compact('display'));
     }
 
     /**
@@ -59,9 +37,9 @@ class TrophyController extends Controller
      * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function edit(Trophy $trophy)
+    public function edit(Display $display, Trophy $trophy)
     {
-        return view('showcase::app.trophy.edit', compact('trophy'));
+        return view('showcase::app.trophy.edit', compact('trophy', 'display'));
     }
 
     /**
@@ -71,11 +49,11 @@ class TrophyController extends Controller
      * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trophy $trophy)
+    public function update(Request $request, Display $display, Trophy $trophy)
     {
         $trophy->fill($request->all());
 
-        return redirect()->route('showcase.trophies.show', compact('trophy'));
+        return redirect()->route('displays.show', compact('display'));
     }
 
     /**
@@ -88,6 +66,6 @@ class TrophyController extends Controller
     {
         $trophy->delete();
 
-        return redirect()->route('showcase.display.index');
+        return redirect()->route('display.index');
     }
 }

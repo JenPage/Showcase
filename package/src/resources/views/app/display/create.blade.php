@@ -1,18 +1,19 @@
-@extends('showcase::app.layouts.app')
-
-@section('title', 'Add Display')
-
+@extends('showcase::app.layouts.app') 
+@section('title', 'Add Display') 
 @section('content')
-<main class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-        <form action="{{route('displays.store')}}" method="POST">
-            {{csrf_field()}}
-            <input type="text" name="name">
-            <input type="text" name="component_view">
-            <button type="submit">Submit</button>
-        </form>
+<main class="col-sm-6 col-sm-offset-2">
+    <h1>Create New Display</h1>
+    <form action="{{route('displays.store')}}" method="POST">
+        {{csrf_field()}}
+        <div class="form-group">
+            <label for="name">Display Name</label>
+            <input class="form-control" type="text" name="name">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="component_view">Component View</label>
+            <input class="form-control" type="text" name="component_view">
+        </div>
+        <button class="btn btn-success" type="submit">Submit</button>
+    </form>
 </main>
 @stop

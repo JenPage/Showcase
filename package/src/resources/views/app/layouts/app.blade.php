@@ -9,8 +9,12 @@
     @include('showcase::app.includes._header-scripts')
 </head>
 <body>
-    @include('showcase::app.includes._header')
-    @yield('content')
+    <div class="container-fluid">
+        <div class="row">
+            @include('showcase::app.includes._header')
+            @yield('content')
+        </div>
+    </div>
     @include('showcase::app.includes._footer')
 </body>
 </html>

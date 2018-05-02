@@ -1,5 +1,14 @@
-@import "~bootstrap/dist/css/bootstrap-grid.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "modules/includes/header";
+@import "modules/component-display";
+@import "modules/component-trophy";
 
 body {
-    background-color: #af111c;
+    background-color: hsl(283, 1%, 98%);
+    .container-fluid {
+        height: 100vh;
+        > .row {
+            height: 100%;
+        }
+    }
 }

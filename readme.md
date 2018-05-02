@@ -8,6 +8,8 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
     - get to 1.0
         - add the admin section
         - create components for dropping in the view boxes
+    - 1.1
+        - Replace buttons with FontAwesome icons where appropriate
 
 ## Install
 ```
@@ -40,6 +42,37 @@ You will need this to access the Showcase admin panels, as they are secured behi
 
 ## Assets
 To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project automagically.
+
+---
+
+## Use
+
+Using displays on your frontend is simple. First, get a display and pass it into the view:
+
+```
+$display = \Showcase\Showcase::display('Sample Box');
+...
+return view('view.name', compact('display'));
+```
+
+To use it in the view, simply use the `@showcase()` directive:
+
+```
+@showcase($display)
+```
+
+### Alternatives
+Instead of using the `Showcase::display()` method, you can query the DB directly:
+
+```
+\Showcase\App\Display::where('name', 'Sample Box')->first();
+```
+
+If you don't want to use the `@showcase()` directive, you can use the component directive directly, though this looks uglier:
+
+```
+@component("showcase::public.components.$display->component_view", compact('display'))@endcomponent
+```
 
 ---
 

@@ -8,10 +8,10 @@ class Showcase
      * Get a display.
      *
      * @param  string  $name
-     * @return  \Showcase\Display
+     * @return  \Showcase\App\Display
      */
-    public static function getDisplay($name)
+    public static function display($name)
     {
-        return Display::where('name', $name);
+        return \Showcase\App\Display::where('name', $name)->first();
     }
 }

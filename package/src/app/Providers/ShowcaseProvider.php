@@ -2,6 +2,7 @@
 
 namespace Showcase\App\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class ShowcaseProvider extends ServiceProvider
@@ -22,6 +23,10 @@ class ShowcaseProvider extends ServiceProvider
             __DIR__.'/../../resources/assets/build' => public_path('vendor/showcase'),          
             __DIR__.'/../../resources/views' => resource_path('/views/vendor/showcase'),
         ], 'showcase');
+
+        Blade::directive('showcase', function ($display) {
+            return "<?php \$__env->startComponent(\"showcase::public.components.{$display}->component_view\", compact('display')); ?><?php echo \$__env->renderComponent(); ?>";
+        });
     }
 
     /**

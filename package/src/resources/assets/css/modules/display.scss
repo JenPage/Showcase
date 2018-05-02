@@ -1,0 +1,27 @@
+.showcase-display-container {
+    margin: 1rem auto 3rem;
+    .showcase-display-admin {
+        margin: 1rem 0 0.5rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .showcase-display-admin-left {
+            span {
+                font-style: italic;
+            }
+        }
+        .showcase-display-admin-right {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            .btn {
+                margin: 0 0.35rem;
+            }
+            .btn:last-child {
+                margin: 0 0 0 0.35rem;
+            }
+        }
+    }
+}

@@ -9006,6 +9006,7 @@ header.showcase-header .showcase-header-title {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
 }
 
 .showcase-display.showcase-box {
@@ -9015,14 +9016,16 @@ header.showcase-header .showcase-header-title {
 
 .showcase-display.showcase-sheet {
   height: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .showcase-trophy {
   max-height: inherit;
   width: auto;
   height: 100%;
-  padding: 1rem 0;
-  margin: 0 1rem;
+  padding: 1rem 0.5rem;
+  margin: auto;
 }
 
 .showcase-trophy .showcase-trophy-image {
@@ -9038,14 +9041,6 @@ header.showcase-header .showcase-header-title {
 
 .showcase-trophy .showcase-trophy-title {
   font-weight: bold;
-}
-
-.showcase-trophy.showcase-trophy-image-only .showcase-trophy-image {
-  height: 100%;
-}
-
-.showcase-trophy.showcase-trophy-image-only ~ .showcase.trophy.title {
-  display: none;
 }
 
 body {

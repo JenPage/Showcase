@@ -2,8 +2,8 @@
     max-height: inherit;
     width: auto;
     height: 100%;
-    padding: 1rem 0;
-    margin: 0 1rem;
+    padding: 1rem 0.5rem;
+    margin: auto;
     .showcase-trophy-image {
         max-height: inherit;
         width: auto;
@@ -15,13 +15,5 @@
     }
     .showcase-trophy-title {
         font-weight: bold;
-    }
-    &.showcase-trophy-image-only {
-        .showcase-trophy-image {
-            height: 100%;
-        }
-        & ~.showcase.trophy.title {
-            display: none;
-        }
     }
 }

@@ -12,6 +12,12 @@ class Showcase
      */
     public static function display($name)
     {
-        return \Showcase\App\Display::where('name', $name)->first();
+        $display = \Showcase\App\Display::where('name', $name)->first();
+        
+        if ($display->count() === 0) {
+            throw new \Exception("Showcase display component view \"$name\" does not exist.");
+        }
+        
+        return $display;
     }
 }

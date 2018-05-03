@@ -5,6 +5,7 @@
     <h1>Edit Trophy</h1>
     <form action="{{route('trophies.update', compact('display', 'trophy'))}}" method="post">
         {{csrf_field()}}
+        {{method_field('PUT')}}
         <div class="form-group">
             <label for="name">Trophy Name</label>
             <input type="text" name="name" value="{{$trophy->name}}">

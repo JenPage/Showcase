@@ -39,6 +39,11 @@ class TrophyController extends Controller
      */
     public function edit(Display $display, Trophy $trophy)
     {
+        if ($display->id !== $trophy->display->id) {
+            flash()->error('Trophy must belong to this display.');
+            return redirect()->back();
+        }
+        
         return view('showcase::app.trophy.edit', compact('trophy', 'display'));
     }
 
@@ -51,7 +56,12 @@ class TrophyController extends Controller
      */
     public function update(Request $request, Display $display, Trophy $trophy)
     {
-        $trophy->fill($request->all());
+        if ($trophy->display->id !== $request->display_id) {
+            flash()->error('Trophy must belong to this display.');
+            return redirect()->back();
+        }
+
+        $trophy->update($request->all());
 
         return redirect()->route('displays.show', compact('display'));
     }

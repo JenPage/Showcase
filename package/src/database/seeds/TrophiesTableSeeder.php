@@ -29,10 +29,19 @@ class TrophiesTableSeeder extends Seeder
             'display_id' => 2
         ]); */
         DB::table(config('showcase.table_prefix').'trophies')->insert([
-            'name' => 'Sample Box Item',
+            'name' => 'Sample Box Item 1',
             'link' => 'http://google.com',
-            'image_url' => 'https://lorempixel.com/300/200/sports',
-            'description' => 'A boring item which links somewhere.',
+            'image_url' => 'https://picsum.photos/300/200',
+            'description' => 'A boring box item which links somewhere.',
+            'display_id' => 1,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+        DB::table(config('showcase.table_prefix').'trophies')->insert([
+            'name' => 'Sample Box Item 2',
+            'link' => 'http://google.com',
+            'image_url' => 'https://picsum.photos/300/200',
+            'description' => 'A boring box item which links somewhere.',
             'display_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -40,8 +49,8 @@ class TrophiesTableSeeder extends Seeder
         DB::table(config('showcase.table_prefix').'trophies')->insert([
             'name' => 'Sample Sheet Item',
             'link' => 'http://google.com',
-            'image_url' => 'https://lorempixel.com/300/200/sports',
-            'description' => 'A boring item which links somewhere.',
+            'image_url' => 'https://picsum.photos/450/300',
+            'description' => 'A boring sheet item which links somewhere.',
             'display_id' => 2,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()

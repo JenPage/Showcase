@@ -19,7 +19,6 @@ class CreateTrophiesTable extends Migration
             $table->string('name')->nullable();
             $table->string('link')->nullable();
             $table->string('description', 55)->nullable();
-            $table->integer('display_id')->unsigned();
             $table->timestamps();
         });
     }

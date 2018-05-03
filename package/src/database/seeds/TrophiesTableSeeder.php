@@ -33,7 +33,6 @@ class TrophiesTableSeeder extends Seeder
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/300/200',
             'description' => 'A boring box item which links somewhere.',
-            'display_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -42,7 +41,6 @@ class TrophiesTableSeeder extends Seeder
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/300/200',
             'description' => 'A boring box item which links somewhere.',
-            'display_id' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -51,7 +49,6 @@ class TrophiesTableSeeder extends Seeder
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/450/300',
             'description' => 'A boring sheet item which links somewhere.',
-            'display_id' => 2,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

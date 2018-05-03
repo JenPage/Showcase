@@ -13,5 +13,6 @@ class ShowcaseDatabaseSeeder extends Seeder
     {
         $this->call(DisplaysTableSeeder::class);
         $this->call(TrophiesTableSeeder::class);
+        $this->call(DisplayTrophyTableSeeder::class);
     }
 }

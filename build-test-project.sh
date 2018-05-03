@@ -6,6 +6,9 @@ db_username=homestead
 db_password=secret
 
 if [ -d "./test-project" ]; then
+    cd test-project
+    php artisan migrate:reset
+    cd ..
     rm -rf test-project
     echo "Removed old test project."
 fi

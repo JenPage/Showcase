@@ -25,8 +25,12 @@ class Display extends Model
         $this->table = config('showcase.table_prefix').$this->table;
     }
 
+    /**
+     * The trophies that belong to this display.
+     * @return Collection
+     */
     public function trophies()
     {
-        return $this->hasMany('Showcase\App\Trophy');
+        return $this->belongsToMany('Showcase\App\Trophy', config('showcase.table_prefix').'display_trophy');
     }
 }

@@ -1,6 +1,6 @@
 # Showcase
 
-A Laravel package which adds the ability to create "showcases", or view boxes which contain cards of items. It also includes an admin panel to manage showcases, which can only be accessed by a logged-in Auth user. Intended for use by Laravel 5.5+
+A Laravel package which adds the ability to create "showcases", or view boxes which contain cards "trophies" of items. It also includes an admin panel to manage displays and trophies, which can only be accessed by a logged-in Auth user. Intended for use by Laravel 5.5+
 
 > Still being developed!
 
@@ -11,43 +11,55 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
 
-## Install
+## Installation
+
+### Install the package
+
+[to do]
+
+### Install the package development environment
 ```
 git clone [the-url]
 composer install
 npm install
 ```
 
-## Test Project
+#### Test Project
 To create a test project:
 `bash build-test-project.sh`
 
 > This can also be used to rebuild the test project if you messed something up.
 
-### Update
+#### Update
 To update the test project with package changes:
 `bash update-test-project.sh`
+
+This will also dump composer's autoload and clear the Laravel cache and compiled views.
 
 Flags you can use:
 - `--nomigrations`: update without refreshing the migrations
 
 If you want to use a different DB, change the credentials at the top of `build-test-project.sh` to match your desired credentials.
 
-### Authentication
+#### Authentication
 The test project generates Auth during the build. A default user is created with the test project:
 
-> email: homestead, password: secret
+> email: homestead@test.email <br>
+> password: secret
 
 You will need this to access the Showcase admin panels, as they are secured behind the Auth middleware by default. This can be changed from the config file.
 
-## Assets
+#### Assets
 To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project automagically.
 
 ---
 
 ## Use
 
-Using displays on your frontend is simple. First, get a display and pass it into the view:
+Showcase is designed to be as simple to use as possible.
+
+### Displays
+Using displays on your frontend is easy. First, get a display and pass it into the view:
 
 ```
 $display = \Showcase\Showcase::display('Sample Box');
@@ -55,24 +67,19 @@ $display = \Showcase\Showcase::display('Sample Box');
 return view('view.name', compact('display'));
 ```
 
-To use it in the view, simply use the `@showcase()` directive:
+To use it in the view, simply use the `@showcaseDisplay()` directive:
 
 ```
-@showcase($display)
+@showcaseDisplay($display)
 ```
 
-### Alternatives
-Instead of using the `Showcase::display()` method, you can query the DB directly:
+The display's template will be rendered automatically.
 
-```
-\Showcase\App\Display::where('name', 'Sample Box')->first();
-```
+### Trophies
 
-If you don't want to use the `@showcase()` directive, you can use the component directive directly, though this looks uglier:
+If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if the trophy has no component view or `force_trophy_default` is set to `true`).
 
-```
-@component("showcase::public.components.$display->component_view", compact('display'))@endcomponent
-```
+Both display and trophy component views can be customized.
 
 ---
 
@@ -81,7 +88,7 @@ If you don't want to use the `@showcase()` directive, you can use the component 
 ### Display Components
 After you've installed the package, you can use `php artisan vendor:publish --tag=showcase` to publish the package resources.
 
-#### Modify Existing Displays
+#### Modify Existing Views
 Once the resources are published, you can find them in the `resources/views/vendor/showcase` directory. You can modify any of the package views, including the admin panels.
 
 #### Add Custom Display Component

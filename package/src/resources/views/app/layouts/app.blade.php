@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     @include('showcase::app.includes._stylesheets')
-    @include('showcase::app.includes._header-scripts')
+    @include('showcase::app.includes._head-scripts')
 </head>
 <body>
     <div class="container-fluid">

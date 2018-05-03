@@ -29,6 +29,7 @@ class TrophiesTableSeeder extends Seeder
             'display_id' => 2
         ]); */
         DB::table(config('showcase.table_prefix').'trophies')->insert([
+            'component_view' => 'default',
             'name' => 'Sample Box Item 1',
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/300/200',
@@ -37,6 +38,7 @@ class TrophiesTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table(config('showcase.table_prefix').'trophies')->insert([
+            'component_view' => 'no_title',
             'name' => 'Sample Box Item 2',
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/300/200',
@@ -45,6 +47,7 @@ class TrophiesTableSeeder extends Seeder
             'updated_at' => Carbon::now()
         ]);
         DB::table(config('showcase.table_prefix').'trophies')->insert([
+            'component_view' => 'description',
             'name' => 'Sample Sheet Item',
             'link' => 'http://google.com',
             'image_url' => 'https://picsum.photos/450/300',

@@ -9,13 +9,31 @@ use Showcase\App\Trophy;
 class TrophyController extends Controller
 {
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $trophies = Trophy::all();
+
+        return view('showcase::app.trophy.index', compact('trophies'));
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Display $display)
+    public function create()
     {
-        return view('showcase::app.trophy.create', compact('display'));
+        $default_view = request()->display !== null
+            ? Display::find($display)->default_trophy_component_view
+            : null;
+
+        $displays = Display::all();
+
+        return view('showcase::app.trophy.create', compact('default_view', 'displays'));
     }
 
     /**
@@ -24,11 +42,25 @@ class TrophyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Display $display)
+    public function store(Request $request)
     {
-        Trophy::create($request->all());
+        $trophy = Trophy::create($request->except('displays'));
 
-        return redirect()->route('displays.show', compact('display'));
+        $trophy->displays()->detach();
+        $trophy->displays()->attach($request->displays);
+
+        return redirect()->route('trophies.show', compact('trophy'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \Showcase\App\Trophy  $trophy
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Trophy $trophy)
+    {
+        return view('showcase::app.trophy.show', compact('trophy'));
     }
 
     /**
@@ -37,14 +69,11 @@ class TrophyController extends Controller
      * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function edit(Display $display, Trophy $trophy)
+    public function edit(Trophy $trophy)
     {
-        if ($display->id !== $trophy->display->id) {
-            flash()->error('Trophy must belong to this display.');
-            return redirect()->back();
-        }
-        
-        return view('showcase::app.trophy.edit', compact('trophy', 'display'));
+        $displays = Display::all();
+
+        return view('showcase::app.trophy.edit', compact('trophy', 'displays'));
     }
 
     /**
@@ -54,16 +83,14 @@ class TrophyController extends Controller
      * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Display $display, Trophy $trophy)
+    public function update(Request $request, Trophy $trophy)
     {
-        if ($trophy->display->id !== $request->display_id) {
-            flash()->error('Trophy must belong to this display.');
-            return redirect()->back();
-        }
+        $trophy->update($request->except('displays'));
 
-        $trophy->update($request->all());
+        $trophy->displays()->detach();
+        $trophy->displays()->attach($request->displays);
 
-        return redirect()->route('displays.show', compact('display'));
+        return redirect()->route('trophies.show', compact('trophy'));
     }
 
     /**
@@ -76,6 +103,6 @@ class TrophyController extends Controller
     {
         $trophy->delete();
 
-        return redirect()->route('display.index');
+        return redirect()->route('trophies.index');
     }
 }

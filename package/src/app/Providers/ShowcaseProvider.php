@@ -24,8 +24,12 @@ class ShowcaseProvider extends ServiceProvider
             __DIR__.'/../../resources/views' => resource_path('/views/vendor/showcase'),
         ], 'showcase');
 
-        Blade::directive('showcase', function ($display) {
-            return "<?php \$__env->startComponent(\"showcase::public.components.{$display}->component_view\", compact('display')); ?><?php echo \$__env->renderComponent(); ?>";
+        Blade::directive('showcaseDisplay', function ($display) {
+            return "<?php \$__env->startComponent(\"showcase::public.components.display.{$display}->component_view\", compact('display')); ?><?php echo \$__env->renderComponent(); ?>";
+        });
+
+        Blade::directive('showcaseTrophy', function ($trophy) {
+            return "<?php \$__env->startComponent(\"showcase::public.components.trophy.{$trophy}->component_view\", compact('trophy')); ?><?php echo \$__env->renderComponent(); ?>";
         });
     }
 

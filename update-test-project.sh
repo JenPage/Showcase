@@ -11,6 +11,8 @@ esac
 cd test-project
 composer update brokerexchange/showcase
 composer dump-autoload
+php artisan cache:clear
+php artisan view:clear
 php artisan vendor:publish --tag=showcase --force
 if [ $migrations = true ]; then 
     php artisan migrate:refresh --seed

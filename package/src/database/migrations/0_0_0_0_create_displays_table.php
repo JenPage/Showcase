@@ -17,6 +17,7 @@ class CreateDisplaysTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('component_view');
+            $table->string('default_trophy_component_view');
             $table->timestamps();
         });
     }

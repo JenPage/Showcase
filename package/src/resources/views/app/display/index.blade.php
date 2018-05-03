@@ -18,7 +18,7 @@
                 </form>
             </div>
         </div>
-        @showcase($display)
+        @showcaseDisplay($display)
     </div>
     @endforeach
 </main>

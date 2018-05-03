@@ -15,8 +15,9 @@ class CreateTrophiesTable extends Migration
     {
         Schema::create(config('showcase.table_prefix').'trophies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image_url');
+            $table->string('component_view');
             $table->string('name')->nullable();
+            $table->string('image_url')->nullable();
             $table->string('link')->nullable();
             $table->string('description', 55)->nullable();
             $table->timestamps();

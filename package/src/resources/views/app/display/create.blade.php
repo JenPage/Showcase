@@ -13,6 +13,10 @@
             <label for="component_view">Component View</label>
             <input class="form-control" type="text" name="component_view">
         </div>
+        <div class="form-group">
+            <label for="default_trophy_component_view">Default Trophy Component View</label>
+            <input class="form-control" type="text" name="default_trophy_component_view">
+        </div>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
 </main>

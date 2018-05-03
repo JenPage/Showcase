@@ -24,13 +24,15 @@ class DisplaysTableSeeder extends Seeder
         ]); */
         DB::table(config('showcase.table_prefix').'displays')->insert([
             'name' => 'Sample Box',
-            'component_view' => 'display_box',
+            'component_view' => 'box',
+            'default_trophy_component_view' => 'default',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
         DB::table(config('showcase.table_prefix').'displays')->insert([
             'name' => 'Sample Sheet',
-            'component_view' => 'display_sheet',
+            'component_view' => 'sheet',
+            'default_trophy_component_view' => 'description',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

@@ -29,7 +29,7 @@
             <label for="displays[]">Displays</label>
             <select name="displays[]" id="" multiple="">
                 @foreach($displays as $display)
-            <option value="{{$display->id}}">{{$display->name}}</option>
+                <option value="{{$display->id}}">{{$display->name}}</option>
                 @endforeach
             </select>
         </div>

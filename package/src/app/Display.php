@@ -33,4 +33,5 @@ class Display extends Model
     {
         return $this->belongsToMany('Showcase\App\Trophy', config('showcase.table_prefix').'display_trophy');
     }
+    
 }

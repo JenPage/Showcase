@@ -18,6 +18,7 @@ class CreateDisplaysTable extends Migration
             $table->string('name');
             $table->string('component_view');
             $table->string('default_trophy_component_view');
+            $table->boolean('force_trophy_default');
             $table->timestamps();
         });
     }

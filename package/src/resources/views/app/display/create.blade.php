@@ -16,6 +16,8 @@
         <div class="form-group">
             <label for="default_trophy_component_view">Default Trophy Component View</label>
             <input class="form-control" type="text" name="default_trophy_component_view">
+            <label for="force_trophy_default">Force Default</label>
+            <input type="checkbox" name="force_trophy_default" value="yes">
         </div>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>

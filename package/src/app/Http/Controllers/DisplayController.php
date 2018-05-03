@@ -37,6 +37,8 @@ class DisplayController extends Controller
      */
     public function store(Request $request)
     {
+        $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
+        
         Display::create($request->all());
 
         return redirect()->route('displays.index');
@@ -73,6 +75,8 @@ class DisplayController extends Controller
      */
     public function update(Request $request, Display $display)
     {
+        $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
+
         $display->update($request->all());
 
         return redirect()->route('displays.show', compact('display'));

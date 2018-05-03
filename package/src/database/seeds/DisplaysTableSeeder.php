@@ -26,6 +26,7 @@ class DisplaysTableSeeder extends Seeder
             'name' => 'Sample Box',
             'component_view' => 'box',
             'default_trophy_component_view' => 'default',
+            'force_trophy_default' => false,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -33,6 +34,7 @@ class DisplaysTableSeeder extends Seeder
             'name' => 'Sample Sheet',
             'component_view' => 'sheet',
             'default_trophy_component_view' => 'description',
+            'force_trophy_default' => false,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);

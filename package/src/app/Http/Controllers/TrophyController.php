@@ -33,7 +33,7 @@ class TrophyController extends Controller
 
         $displays = Display::all();
 
-        $component_views = Storage::files(base_dir('resources/views/public/components/trophies'));
+        // $component_views = Storage::files(base_dir('resources/views/public/components/trophies'));
 
         return view('showcase::app.trophy.create', compact('default_view', 'displays', 'component_views'));
     }

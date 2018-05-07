@@ -9,4 +9,27 @@ header.showcase-header {
         line-height: 1.4;
         margin-bottom: 1rem;
     }
+    .showcase-nav-container {
+        list-style: none;
+        .showcase-nav-item {
+            position: relative;
+            &::before {
+                content: '';
+                width: 0;
+                height: 0;
+                border-top: 0.25em solid transparent;
+                border-left: 0.5em solid hsl(0, 100%, 100%);
+                border-bottom: 0.25em solid transparent;
+                position: absolute;
+                top: 0.75em;
+                transform: translate(-1.5em, -50%);
+                &:hover {
+                    border-left: 0.5em solid hsl(0, 100%, 50%);
+                }
+            }
+            .showcase-nav-container {
+                transform: scale(1, 0);
+            }
+        }
+    }
 }

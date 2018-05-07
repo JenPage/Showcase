@@ -8992,6 +8992,36 @@ header.showcase-header .showcase-header-title {
   margin-bottom: 1rem;
 }
 
+header.showcase-header .showcase-nav-container {
+  list-style: none;
+}
+
+header.showcase-header .showcase-nav-container .showcase-nav-item {
+  position: relative;
+}
+
+header.showcase-header .showcase-nav-container .showcase-nav-item::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 0.25em solid transparent;
+  border-left: 0.5em solid white;
+  border-bottom: 0.25em solid transparent;
+  position: absolute;
+  top: 0.75em;
+  -webkit-transform: translate(-1.5em, -50%);
+          transform: translate(-1.5em, -50%);
+}
+
+header.showcase-header .showcase-nav-container .showcase-nav-item::before:hover {
+  border-left: 0.5em solid red;
+}
+
+header.showcase-header .showcase-nav-container .showcase-nav-item .showcase-nav-container {
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+}
+
 main.showcase-display-main {
   margin: 0 auto;
 }

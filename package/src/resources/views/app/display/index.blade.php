@@ -9,12 +9,16 @@
                 <span>{{ $display->name }}</span>
             </div>
             <div class="showcase-display-admin-right">
-                <a href="/displays/{{$display->id}}/" class="btn btn-sm btn-info">View</a>
-                <a href="/displays/{{$display->id}}/edit" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/displays/{{$display->id}}/" class="btn btn-sm btn-info">
+                    <span>View</span>
+                </a>
+                <a href="/displays/{{$display->id}}/edit" class="btn btn-sm btn-warning">
+                    <span>Edit</span>
+                </a>
                 <form action="/displays/{{$display->id}}" method="post">
                     {{csrf_field()}}
                     {{method_field('PUT')}}
-                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-sm btn-danger"><span>Delete</span></button>
                 </form>
             </div>
         </div>

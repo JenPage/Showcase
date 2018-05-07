@@ -14,8 +14,6 @@ class DisplayController extends Controller
      */
     public function index()
     {
-        $displays = Display::all();
-
         return view('showcase::app.display.index', compact('displays'));
     }
 
@@ -90,6 +88,8 @@ class DisplayController extends Controller
      */
     public function destroy(Display $display)
     {
+        $display->trophies()->detach();
+
         $display->delete();
 
         return redirect()->route('displays.index');

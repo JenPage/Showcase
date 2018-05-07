@@ -15,8 +15,6 @@ class TrophyController extends Controller
      */
     public function index()
     {
-        $trophies = Trophy::all();
-
         return view('showcase::app.trophy.index', compact('trophies'));
     }
 
@@ -30,8 +28,6 @@ class TrophyController extends Controller
         $default_view = request()->display !== null
             ? Display::find($display)->default_trophy_component_view
             : null;
-
-        $displays = Display::all();
 
         // $component_views = Storage::files(base_dir('resources/views/public/components/trophies'));
 
@@ -73,8 +69,6 @@ class TrophyController extends Controller
      */
     public function edit(Trophy $trophy)
     {
-        $displays = Display::all();
-
         return view('showcase::app.trophy.edit', compact('trophy', 'displays'));
     }
 
@@ -103,6 +97,8 @@ class TrophyController extends Controller
      */
     public function destroy(Trophy $trophy)
     {
+        $trophy->displays()->detach();
+
         $trophy->delete();
 
         return redirect()->route('trophies.index');

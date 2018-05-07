@@ -3,6 +3,7 @@
 namespace Showcase\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class ShowcaseProvider extends ServiceProvider
@@ -39,6 +40,11 @@ class ShowcaseProvider extends ServiceProvider
 
             return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), compact('trophy')); ?><?php echo \$__env->renderComponent(); ?>";
         });
+
+        $displays = \Showcase\App\Display::with('trophies')->get();
+        $trophies = \Showcase\App\Trophy::all();
+        View::share('displays', $displays);
+        View::share('trophies', $trophies);
     }
 
     /**

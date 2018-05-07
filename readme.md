@@ -50,7 +50,9 @@ The test project generates Auth during the build. A default user is created with
 You will need this to access the Showcase admin panels, as they are secured behind the Auth middleware by default. This can be changed from the config file.
 
 #### Assets
-To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project automagically.
+To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project's public resources.
+
+You will need to add a link to `/vendor/showcase/public.css` to your project's `head` section, wherever the rest of your stylesheets are being included. Alteratively, if you'd rather bundle the public styles to your app stylesheet, you can import them by add `@import "public/vendor/showcase/public";` to your main stylesheet.
 
 ---
 
@@ -77,7 +79,7 @@ The display's template will be rendered automatically.
 
 ### Trophies
 
-If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if the trophy has no component view or `force_trophy_default` is set to `true`).
+If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy, $display)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if the trophy has no component view or `force_trophy_default` is set to `true`).
 
 Both display and trophy component views can be customized.
 

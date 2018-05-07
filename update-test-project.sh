@@ -21,7 +21,7 @@ while test $# -gt 0; do
     esac
 done
 
-if [ $rundev = true ]; then
+if [ "$rundev" = true ]; then
     cd package/src
     npm run dev
     cd ../..
@@ -32,7 +32,7 @@ composer dump-autoload
 php artisan cache:clear
 php artisan view:clear
 php artisan vendor:publish --tag=showcase --force
-if [ $migrations = true ]; then 
+if [ "$migrations" = true ]; then 
     php artisan migrate:refresh --seed
     php artisan db:seed --class=ShowcaseDatabaseSeeder
 fi

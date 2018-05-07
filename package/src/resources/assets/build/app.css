@@ -8989,21 +8989,30 @@ header.showcase-header .showcase-header-title {
   display: block;
   color: #d7ccdb;
   line-height: 1.4;
+  margin-bottom: 1rem;
 }
 
-main {
-  margin: auto;
+main.showcase-display-main {
+  margin: 0 auto;
 }
 
-main h1 {
+main.showcase-display-main h1 {
   line-height: 1.4;
 }
 
-main .showcase-display-container {
+main.showcase-display-main .showcase-display-container {
   margin: 1rem auto 3rem;
 }
 
-main .showcase-display-container .showcase-display-admin {
+main.showcase-display-main .showcase-display-container.showcase-display-show {
+  margin-top: 0;
+}
+
+main.showcase-display-main .showcase-display-container.showcase-display-show .showcase-display-admin {
+  margin-top: 0;
+}
+
+main.showcase-display-main .showcase-display-container .showcase-display-admin {
   margin: 1rem 0 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9020,11 +9029,11 @@ main .showcase-display-container .showcase-display-admin {
           justify-content: space-between;
 }
 
-main .showcase-display-container .showcase-display-admin .showcase-display-admin-left span {
+main.showcase-display-main .showcase-display-container .showcase-display-admin .showcase-display-admin-left span {
   font-style: italic;
 }
 
-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right {
+main.showcase-display-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9040,40 +9049,40 @@ main .showcase-display-container .showcase-display-admin .showcase-display-admin
           justify-content: flex-end;
 }
 
-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn {
+main.showcase-display-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn {
   margin: 0 0.35rem;
   -webkit-transform: skew(-20deg);
           transform: skew(-20deg);
   border-radius: 1px;
 }
 
-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn span {
+main.showcase-display-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn span {
   display: block;
   -webkit-transform: skew(20deg);
           transform: skew(20deg);
 }
 
-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn:last-child {
+main.showcase-display-main .showcase-display-container .showcase-display-admin .showcase-display-admin-right .btn:last-child {
   margin: 0 0 0 0.35rem;
 }
 
-main .showcase-display-container .showcase-display {
+main.showcase-display-main .showcase-display-container .showcase-display {
   border: 1px solid #bf4040;
 }
 
-main {
-  margin: auto;
+main.showcase-trophy-main {
+  margin: 0 auto;
 }
 
-main h1 {
+main.showcase-trophy-main h1 {
   line-height: 1.4;
 }
 
-main .showcase-trophy-container {
+main.showcase-trophy-main .showcase-trophy-container {
   margin: 1rem auto 3rem;
 }
 
-main .showcase-trophy-container .showcase-trophy-admin {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin {
   margin: 1rem 0 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9090,11 +9099,11 @@ main .showcase-trophy-container .showcase-trophy-admin {
           justify-content: space-between;
 }
 
-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-left span {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-left span {
   font-style: italic;
 }
 
-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9110,24 +9119,24 @@ main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-ri
           justify-content: flex-end;
 }
 
-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn {
   margin: 0 0.35rem;
   -webkit-transform: skew(-20deg);
           transform: skew(-20deg);
   border-radius: 1px;
 }
 
-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn span {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn span {
   display: block;
   -webkit-transform: skew(20deg);
           transform: skew(20deg);
 }
 
-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn:last-child {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin .showcase-trophy-admin-right .btn:last-child {
   margin: 0 0 0 0.35rem;
 }
 
-main .showcase-trophy-container .showcase-trophy {
+main.showcase-trophy-main .showcase-trophy-container .showcase-trophy {
   border: 1px solid #bf4040;
 }
 

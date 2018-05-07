@@ -1,10 +1,16 @@
-main {
-    margin: auto;
+main.showcase-display-main {
+    margin: 0 auto;
     h1 {
         line-height: 1.4;
     }
     .showcase-display-container {
         margin: 1rem auto 3rem;
+        &.showcase-display-show {
+            margin-top: 0;
+            .showcase-display-admin {
+                margin-top: 0;
+            }
+        }
         .showcase-display-admin {
             margin: 1rem 0 0.5rem;
             display: flex;

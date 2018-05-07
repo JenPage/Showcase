@@ -1,6 +1,6 @@
 @extends('showcase::app.layouts.app') 
 @section('content')
-<main class="col-md-6 col-md-offset-2">
+<main class="col-md-6 col-md-offset-2 showcase-trophy-main">
     <h1>All Trophies</h1>
     @foreach($trophies as $trophy)
     <div class="showcase-trophy-container">

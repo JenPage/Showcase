@@ -16,10 +16,10 @@
             <li tabindex="-1" class="showcase-nav-item">
                 <a href="{{route('trophies.index')}}">Trophies</a>
                 <ul class="showcase-nav-container">
-                <li class="showcase-nav-item"><a href="{{route('trophies.create')}}">Create</a></li>
-                @foreach($trophies as $trophy)
-                <li class="showcase-nav-item"><a href="{{route('trophies.show', ['trophy' => $trophy])}}">{{$trophy->name}}</a></li>
-                @endforeach
+                    <li class="showcase-nav-item"><a href="{{route('trophies.create')}}">Create</a></li>
+                    @foreach($trophies as $trophy)
+                    <li class="showcase-nav-item"><a href="{{route('trophies.show', ['trophy' => $trophy])}}">{{$trophy->name}}</a></li>
+                    @endforeach
                 </ul>
             </li>
         </ul>

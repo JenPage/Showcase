@@ -9021,6 +9021,8 @@ header.showcase-header .showcase-nav-container .showcase-nav-item::before {
   top: 0.75em;
   -webkit-transform: translate(-1.5em, -50%);
           transform: translate(-1.5em, -50%);
+  -webkit-transition: all linear 0.1s 0.2s;
+  transition: all linear 0.1s 0.2s;
 }
 
 header.showcase-header .showcase-nav-container .showcase-nav-item::after {
@@ -9037,19 +9039,23 @@ header.showcase-header .showcase-nav-container .showcase-nav-item::after {
           transform: translate(-1.5em, -50%);
 }
 
+header.showcase-header .showcase-nav-container .showcase-nav-item:hover > a,
 header.showcase-header .showcase-nav-container .showcase-nav-item:focus > a {
   background: #a616df;
 }
 
-header.showcase-header .showcase-nav-container .showcase-nav-item:focus:hover::before {
+header.showcase-header .showcase-nav-container .showcase-nav-item:hover::before,
+header.showcase-header .showcase-nav-container .showcase-nav-item:focus::before {
   display: none;
 }
 
-header.showcase-header .showcase-nav-container .showcase-nav-item:focus:hover::after {
+header.showcase-header .showcase-nav-container .showcase-nav-item:hover::after,
+header.showcase-header .showcase-nav-container .showcase-nav-item:focus::after {
   display: block;
 }
 
-header.showcase-header .showcase-nav-container .showcase-nav-item:focus:hover .showcase-nav-container {
+header.showcase-header .showcase-nav-container .showcase-nav-item:hover .showcase-nav-container,
+header.showcase-header .showcase-nav-container .showcase-nav-item:focus .showcase-nav-container {
   height: auto;
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
@@ -9061,10 +9067,8 @@ header.showcase-header .showcase-nav-container .showcase-nav-item .showcase-nav-
           transform: scale(1, 0);
   -webkit-transform-origin: top center;
           transform-origin: top center;
-  -webkit-transition: -webkit-transform ease-in-out 0.1s;
-  transition: -webkit-transform ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s;
-  transition: transform ease-in-out 0.1s, -webkit-transform ease-in-out 0.1s;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
   padding: 0 0 0 1em;
 }
 

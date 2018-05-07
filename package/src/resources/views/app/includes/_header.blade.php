@@ -2,7 +2,7 @@
     <span class="showcase-header-title">Showcase</span>
     <nav>
         <ul class="showcase-nav-container">
-            <li class="showcase-nav-item">
+            <li tabindex="-1" class="showcase-nav-item">
                 <a href="{{route('displays.index')}}">Displays</a>
                 <ul class="showcase-nav-container">
                     <li class="showcase-nav-item"><a href="{{route('displays.create')}}">Create</a></li>
@@ -13,7 +13,7 @@
             </li>
         </ul>
         <ul class="showcase-nav-container">
-            <li class="showcase-nav-item">
+            <li tabindex="-1" class="showcase-nav-item">
                 <a href="{{route('trophies.index')}}">Trophies</a>
                 <ul class="showcase-nav-container">
                 <li class="showcase-nav-item"><a href="{{route('trophies.create')}}">Create</a></li>

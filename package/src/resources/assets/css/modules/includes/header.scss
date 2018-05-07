@@ -5,14 +5,25 @@ header.showcase-header {
         text-align: center;
         font-size: 2.5rem;
         display: block;
-        color: hsl(283, 17%, 83%);
+        // color: hsl(283, 17%, 83%);
+        color: hsl(283, 95%, 95%);
         line-height: 1.4;
         margin-bottom: 1rem;
     }
     .showcase-nav-container {
         list-style: none;
-        .showcase-nav-item {
+        // color: hsl(0, 100%, 100%);
+        .showcase-nav-item, {
             position: relative;
+            > a {
+                display: block;
+                text-decoration: none;
+                // color: hsl(0, 100%, 100%);
+                color: hsl(283, 95%, 95%);
+                &:hover {
+                    background: hsl(283, 82%, 48%);
+                }
+            }
             &::before {
                 content: '';
                 width: 0;
@@ -23,12 +34,46 @@ header.showcase-header {
                 position: absolute;
                 top: 0.75em;
                 transform: translate(-1.5em, -50%);
-                &:hover {
-                    border-left: 0.5em solid hsl(0, 100%, 50%);
+            }
+            &::after {
+                display: none;
+                content: '';
+                    width: 0; 
+                    height: 0; 
+                    border-left: 0.25em solid transparent; 
+                    border-right: 0.25em solid transparent; 
+                    border-top: 0.5em solid hsl(0, 100%, 100%);
+                    position: absolute;
+                    top: 0.75em;
+                    transform: translate(-1.5em, -50%);
+            }
+            &:focus {
+                > a {
+                    background: hsl(283, 82%, 48%);
+                }
+                &:hover::before {
+                    display: none;
+                }
+                &:hover::after {
+                    display: block;
+                }
+                &:hover .showcase-nav-container {
+                    height: auto;
+                    transform: scale(1, 1);
                 }
             }
             .showcase-nav-container {
+                height: 0;
                 transform: scale(1, 0);
+                transform-origin: top center;
+                transition: transform ease-in-out 0.1s;
+                padding: 0 0 0 1em;
+                .showcase-nav-item {
+                    &::before, &::after {
+                        display: none;
+                        
+                    }
+                }
             }
         }
     }

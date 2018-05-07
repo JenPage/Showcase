@@ -1,13 +1,30 @@
+while test $# -gt 0; do
 case "$1" in
     "-n" | "--nomigrations")
         migrations=false
         echo "Migrations will NOT run."
+        shift
+        ;;
+    "-d" | "--rundev")
+        rundev=true
+        echo "Will run dev"
+        shift
         ;;
     *)
         migrations=true
         echo "Migrations will run."
+        shift
+        rundev=false
+        echo "Will NOT run dev"
+        shift
 esac
+done
 
+if [ $rundev = true ]; then
+    cd package/src
+    npm run dev
+    cd ../..
+fi
 cd test-project
 composer update brokerexchange/showcase
 composer dump-autoload

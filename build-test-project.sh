@@ -25,7 +25,8 @@ sed -i '' "s|// \$this->call(UsersTableSeeder::class);|\$this->call(UsersTableSe
 cp ../UsersTableSeeder.php ./database/seeds/
 php artisan make:auth
 composer require brokerexchange/showcase=dev-feature/1.0
+npm install
 cd ..
-bash update-test-project.sh
+bash update-test-project.sh --migrations --rundev
 echo "Test project built!"
 echo "To fire it up, cd into the test project and use php artisan serve"

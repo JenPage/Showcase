@@ -33,5 +33,17 @@ class Display extends Model
     {
         return $this->belongsToMany('Showcase\App\Trophy', config('showcase.table_prefix').'display_trophy');
     }
+
+    /**
+     * Return true if the listed trophy is attached to this display.
+     * @return  boolean
+     */
+    public function hasTrophy(\Showcase\App\Trophy $trophy)
+    {
+        $trophies = $this->trophies()->get();
+        return $trophies->reduce(function ($carry, $displayTrophy) use ($trophy) {
+            return $carry ? $carry : $displayTrophy->id === $trophy->id;
+        }, false);
+    }
     
 }

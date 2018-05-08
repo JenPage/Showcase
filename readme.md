@@ -9,6 +9,9 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - add the admin section
         - create components for dropping in the view boxes
         - add sort order functionality within displays for trophies
+        - unit tests
+        - show trophies associated with a display on the show form
+        - show displays associated with a trophy on the show form
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
 

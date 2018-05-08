@@ -55,6 +55,9 @@ header.showcase-header {
                     &::before, &::after {
                         display: none;
                     }
+                    &:first-child {
+                        font-style: italic;
+                    }
                 }
             }
         }

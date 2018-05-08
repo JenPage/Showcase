@@ -30,30 +30,15 @@ header.showcase-header {
                 border-bottom: 0.25em solid transparent;
                 position: absolute;
                 top: 0.75em;
-                transform: translate(-1.5em, -50%);
-                transition: all linear 0.1s 0.2s;
-            }
-            &::after {
-                display: none;
-                content: '';
-                    width: 0; 
-                    height: 0; 
-                    border-left: 0.25em solid transparent; 
-                    border-right: 0.25em solid transparent; 
-                    border-top: 0.5em solid hsl(0, 100%, 100%);
-                    position: absolute;
-                    top: 0.75em;
-                    transform: translate(-1.5em, -50%);
+                transform: translate(-1.5em, -50%) rotate(0deg);
+                transition: transform ease-in-out 0.1s;
             }
             &:hover, &:focus {
                 > a {
                     background: hsl(283, 82%, 48%);
                 }
                 &::before {
-                    display: none;
-                }
-                &::after {
-                    display: block;
+                    transform: translate(-1.5em, -50%) rotate(90deg);
                 }
                 & .showcase-nav-container {
                     height: auto;

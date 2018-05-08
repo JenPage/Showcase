@@ -9019,24 +9019,12 @@ header.showcase-header .showcase-nav-container .showcase-nav-item::before {
   border-bottom: 0.25em solid transparent;
   position: absolute;
   top: 0.75em;
-  -webkit-transform: translate(-1.5em, -50%);
-          transform: translate(-1.5em, -50%);
-  -webkit-transition: all linear 0.1s 0.2s;
-  transition: all linear 0.1s 0.2s;
-}
-
-header.showcase-header .showcase-nav-container .showcase-nav-item::after {
-  display: none;
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 0.25em solid transparent;
-  border-right: 0.25em solid transparent;
-  border-top: 0.5em solid white;
-  position: absolute;
-  top: 0.75em;
-  -webkit-transform: translate(-1.5em, -50%);
-          transform: translate(-1.5em, -50%);
+  -webkit-transform: translate(-1.5em, -50%) rotate(0deg);
+          transform: translate(-1.5em, -50%) rotate(0deg);
+  -webkit-transition: -webkit-transform ease-in-out 0.1s;
+  transition: -webkit-transform ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s;
+  transition: transform ease-in-out 0.1s, -webkit-transform ease-in-out 0.1s;
 }
 
 header.showcase-header .showcase-nav-container .showcase-nav-item:hover > a,
@@ -9046,12 +9034,8 @@ header.showcase-header .showcase-nav-container .showcase-nav-item:focus > a {
 
 header.showcase-header .showcase-nav-container .showcase-nav-item:hover::before,
 header.showcase-header .showcase-nav-container .showcase-nav-item:focus::before {
-  display: none;
-}
-
-header.showcase-header .showcase-nav-container .showcase-nav-item:hover::after,
-header.showcase-header .showcase-nav-container .showcase-nav-item:focus::after {
-  display: block;
+  -webkit-transform: translate(-1.5em, -50%) rotate(90deg);
+          transform: translate(-1.5em, -50%) rotate(90deg);
 }
 
 header.showcase-header .showcase-nav-container .showcase-nav-item:hover .showcase-nav-container,

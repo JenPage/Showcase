@@ -89,7 +89,7 @@ If you look in the default display component views, you'll notice that they each
 
 Both display and trophy component views can be customized.
 
-> Note: Currently, there is no "sort" functionality, but you can still sort trophies within a display by detaching/attaching trophies from selective displays, which will put a particular trophy last in the sorting order. This is for alpha functionality only, and proper sorting will be in place for 1.0
+> Note: Currently, there is no "sort" functionality, but you can still sort trophies within a display by detaching/attaching trophies from a display, which will put a particular trophy last in the sorting order. This is for alpha functionality only, and proper sorting will be in place for 1.0
 
 ---
 

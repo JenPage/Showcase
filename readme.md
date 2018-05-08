@@ -8,6 +8,7 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
     - get to 1.0
         - add the admin section
         - create components for dropping in the view boxes
+        - add sort order functionality within displays for trophies
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
 
@@ -83,6 +84,8 @@ The display's template will be rendered automatically.
 If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy, $display)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if the trophy has no component view or `force_trophy_default` is set to `true`).
 
 Both display and trophy component views can be customized.
+
+> Note: Currently, there is no "sort" functionality, but you can still sort trophies within a display by detaching/attaching trophies from selective displays, which will put a particular trophy last in the sorting order. This is for alpha functionality only, and proper sorting will be in place for 1.0
 
 ---
 

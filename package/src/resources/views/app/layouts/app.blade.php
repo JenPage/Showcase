@@ -12,8 +12,12 @@
     <div class="container-fluid">
         <div class="row">
             @include('showcase::app.includes._header')
-            @include('flash::message')
-            @yield('content')
+            <div class="col-md-10">
+                @include('flash::message')
+                <div class="row">
+                    @yield('content')
+                </div>
+            </div>
         </div>
     </div>
     @include('showcase::app.includes._footer')

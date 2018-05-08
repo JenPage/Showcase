@@ -3,7 +3,7 @@
 @section('title', 'Show Trophy')
 
 @section('content')
-<main class="col-md-6 showcase-trophy-main">
+<main class="col-md-8 showcase-trophy-main">
         <div class="showcase-trophy-container showcase-trophy-show">
             <div class="showcase-trophy-admin">
                 <div class="showcase-trophy-admin-left">

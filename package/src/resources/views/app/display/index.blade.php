@@ -1,6 +1,6 @@
 @extends('showcase::app.layouts.app') 
 @section('content')
-<main class="col-md-6 col-md-offset-2 showcase-display-main">
+<main class="col-md-8 showcase-display-main">
     <h1>All Displays</h1>
     @foreach($displays as $display)
     <div class="showcase-display-container">

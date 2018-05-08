@@ -86,6 +86,8 @@ class TrophyController extends Controller
         $trophy->displays()->detach();
         $trophy->displays()->attach($request->displays);
 
+        flash()->success('Trophy updated!');
+
         return redirect()->route('trophies.show', compact('trophy'));
     }
 

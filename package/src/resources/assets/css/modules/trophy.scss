@@ -5,6 +5,12 @@ main.showcase-trophy-main {
     }
     .showcase-trophy-container {
         margin: 1rem auto 3rem;
+        &.showcase-trophy-show {
+            margin-top: 0;
+            .showcase-trophy-admin {
+                margin-top: 0;
+            }
+        }
         .showcase-trophy-admin {
             margin: 1rem 0 0.5rem;
             display: flex;

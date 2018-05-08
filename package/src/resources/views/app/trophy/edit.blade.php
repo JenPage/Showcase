@@ -1,7 +1,7 @@
 @extends('showcase::app.layouts.app') 
 @section('title', 'Edit Trophy') 
 @section('content')
-<main class="col-md-4 showcase-trophy-main">
+<main class="col-md-6 showcase-trophy-main">
     <h1>Edit Trophy</h1>
     <form action="{{route('trophies.update', compact('display', 'trophy'))}}" method="post">
         {{csrf_field()}} {{method_field('PUT')}}
@@ -23,13 +23,13 @@
         </div>
         <div class="form-group">
             <label for="description">Short Description</label>
-            <input type="text" class="form-control" name="description" value={{$trophy->description}}>
+            <input type="text" class="form-control" name="description" value="{{$trophy->description}}">
         </div>
         <div class="form-group">
                 <label for="displays[]">Displays</label>
                 <select class="form-control" name="displays[]" id="" multiple="">
                     @foreach($displays as $display)
-                    <option value="{{$display->id}}">{{$display->name}}</option>
+                    <option value="{{$display->id}}" {{!$trophy->hasDisplay($display) ?: 'selected'}}>{{$display->name}}</option>
                     @endforeach
                 </select>
             </div>

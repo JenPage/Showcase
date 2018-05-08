@@ -1,7 +1,7 @@
 @extends('showcase::app.layouts.app') 
 @section('title', 'Create Trophy') 
 @section('content')
-<main class="col-md-4 showcase-trophy-main">
+<main class="col-md-6 showcase-trophy-main">
     <h1>Create New Trophy</h1>
     <form action="{{route('trophies.store', compact('trophies'))}}" method="post">
         {{csrf_field()}}

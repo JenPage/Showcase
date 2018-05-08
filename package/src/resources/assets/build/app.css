@@ -9155,6 +9155,14 @@ main.showcase-trophy-main .showcase-trophy-container {
   margin: 1rem auto 3rem;
 }
 
+main.showcase-trophy-main .showcase-trophy-container.showcase-trophy-show {
+  margin-top: 0;
+}
+
+main.showcase-trophy-main .showcase-trophy-container.showcase-trophy-show .showcase-trophy-admin {
+  margin-top: 0;
+}
+
 main.showcase-trophy-main .showcase-trophy-container .showcase-trophy-admin {
   margin: 1rem 0 0.5rem;
   display: -webkit-box;

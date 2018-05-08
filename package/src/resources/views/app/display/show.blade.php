@@ -1,7 +1,7 @@
 @extends('showcase::app.layouts.app') 
 @section('title', 'Show Display') 
 @section('content')
-<main class="col-md-6 showcase-display-main">
+<main class="col-md-8 showcase-display-main">
     <div class="showcase-display-container showcase-display-show">
         <div class="showcase-display-admin">
             <div class="showcase-display-admin-left">

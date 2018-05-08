@@ -1,7 +1,7 @@
 @extends('showcase::app.layouts.app') 
 @section('title', 'Create Display') 
 @section('content')
-<main class="col-sm-4 col-sm-offset-2 showcase-display-main">
+<main class="col-sm-6 showcase-display-main">
     <h1>Create New Display</h1>
     <form action="{{route('displays.store')}}" method="POST">
         {{csrf_field()}}

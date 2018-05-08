@@ -12,6 +12,7 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - unit tests
         - show trophies associated with a display on the show form
         - show displays associated with a trophy on the show form
+        - automate including the assets in the test project
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
         - add ability to use a custom auth guard
@@ -20,9 +21,17 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 ### Install the package
 
-[to do]
+> This is not on Packagist yet, so these instructions don't work!
+
+```
+composer require brokerexchange/showcase
+php artisan vendor:publish --tag=showcase
+```
+
+You will need to add a link to `/vendor/showcase/public.css` to your project's `head` section, wherever the rest of your stylesheets are being included. Alteratively, if you'd rather bundle the public styles to your app stylesheet, you can import them by add `@import "public/vendor/showcase/public";` to your main stylesheet.
 
 ### Install the package development environment
+
 ```
 git clone [the-url]
 composer install
@@ -35,6 +44,8 @@ To create a test project:
 
 > This can also be used to rebuild the test project if you messed something up.
 
+If you want to use a different DB, change the credentials at the top of `build-test-project.sh` to match your desired credentials.
+
 #### Update
 To update the test project with package changes:
 `bash update-test-project.sh`
@@ -45,8 +56,6 @@ Flags you can use:
 - `--migrations`: run database migrations
 - `--rundev`: run the package `npm run dev` before updating the test project
 
-If you want to use a different DB, change the credentials at the top of `build-test-project.sh` to match your desired credentials.
-
 #### Authentication
 The test project generates Auth during the build. A default user is created with the test project:
 
@@ -56,9 +65,9 @@ The test project generates Auth during the build. A default user is created with
 You will need this to access the Showcase admin panels, as they are secured behind the Auth middleware by default. This can be changed from the config file.
 
 #### Assets
-To build the JS and SCSS assets, just `cd package/src/` and `npm run dev`, which will compile everything into the `resources/build` directory. The package will handle integrating the assets within a Laravel project's public resources.
+To build the package JS and SCSS assets during development, just use the `--rundev` flag when running the update script. It will take care of compiling your assets and moving them to the proper locations in the test project.
 
-You will need to add a link to `/vendor/showcase/public.css` to your project's `head` section, wherever the rest of your stylesheets are being included. Alteratively, if you'd rather bundle the public styles to your app stylesheet, you can import them by add `@import "public/vendor/showcase/public";` to your main stylesheet.
+You will still need to add a link for the showcase stylesheets to the test project `head`, as outlined in the package install instructions.
 
 ---
 

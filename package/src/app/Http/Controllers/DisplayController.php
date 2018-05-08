@@ -4,6 +4,7 @@ namespace Showcase\App\Http\Controllers;
 
 use Showcase\App\Display;
 use Illuminate\Http\Request;
+use Showcase\App\Http\Requests\DisplayRequest;
 
 class DisplayController extends Controller
 {
@@ -30,10 +31,10 @@ class DisplayController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Showcase\App\Http\Requests\DisplayRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DisplayRequest $request)
     {
         $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
         
@@ -67,11 +68,11 @@ class DisplayController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Showcase\App\Http\Requests\DisplayRequest  $request
      * @param  \Showcase\App\Display  $display
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Display $display)
+    public function update(DisplayRequest $request, Display $display)
     {
         $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
 

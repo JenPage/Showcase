@@ -38,7 +38,9 @@ class ShowcaseProvider extends ServiceProvider
                 ? "{$trophy}->component_view" 
                 : "{$display}->force_trophy_default == true ? {$display}->default_trophy_component_view : {$trophy}->component_view";
 
-            return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), ['trophy' => {$trophy}, 'display' => {$display}]); ?><?php echo \$__env->renderComponent(); ?>";
+            $displayStr = $display !== null ? "\$display" : '""';
+
+            return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), ['trophy' => {$trophy}, 'display' => $displayStr]); ?><?php echo \$__env->renderComponent(); ?>";
         });
 
         $displays = \Showcase\App\Display::with('trophies')->get();

@@ -5,6 +5,7 @@ namespace Showcase\App\Http\Controllers;
 use Illuminate\Http\Request;
 use Showcase\App\Display;
 use Showcase\App\Trophy;
+use Showcase\App\Http\Requests\TrophyRequest;
 
 class TrophyController extends Controller
 {
@@ -37,10 +38,10 @@ class TrophyController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Showcase\App\Http\Requests\TrophyRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TrophyRequest $request)
     {
         $trophy = Trophy::create($request->except('displays'));
 
@@ -75,11 +76,11 @@ class TrophyController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Showcase\App\Http\Requests\TrophyRequest  $request
      * @param  \Showcase\App\Trophy  $trophy
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Trophy $trophy)
+    public function update(TrophyRequest $request, Trophy $trophy)
     {
         $trophy->update($request->except('displays'));
 

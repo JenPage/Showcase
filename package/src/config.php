@@ -21,4 +21,13 @@ return [
     | pass through. This is required to use Showcase behind authentication.
     */
     'middleware' => ['web', 'auth'],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Description Length
+    |--------------------------------------------------------------------------
+    |
+    | Change the trophy description length maximum.
+    */
+    'description_length' => 55,
 ];

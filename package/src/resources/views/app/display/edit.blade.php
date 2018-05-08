@@ -18,7 +18,7 @@
             <input class="form-control" type="text" name="default_trophy_component_view" value="{{$display->default_trophy_component_view}}">
         </div>
         <div class="form-group form-check">
-            <input class="form-check-input" type="checkbox" name="force_trophy_default" value="yes" {{$display->force_trophy_default ? 'checked' : ''}}>
+            <input class="form-check-input" type="checkbox" name="force_trophy_default" value="1" {{$display->force_trophy_default ? 'checked' : ''}}>
             <label class="form-check-label" for="force_trophy_default">Force Default Trophy View</label>
         </div>
         <button class="btn btn-success btn-block" type="submit">Update</button>

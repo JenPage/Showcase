@@ -13,6 +13,7 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - show trophies associated with a display on the show form
         - show displays associated with a trophy on the show form
         - automate including the assets in the test project
+        - add validation rule for checking template files
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
         - add ability to use a custom auth guard

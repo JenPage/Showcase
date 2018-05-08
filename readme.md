@@ -37,7 +37,7 @@ To update the test project with package changes:
 This will also dump composer's autoload and clear the Laravel cache and compiled views.
 
 Flags you can use:
-- `--nomigrations`: update without refreshing the migrations
+- `--migrations`: run database migrations
 - `--rundev`: run the package `npm run dev` before updating the test project
 
 If you want to use a different DB, change the credentials at the top of `build-test-project.sh` to match your desired credentials.

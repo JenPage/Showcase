@@ -1,23 +1,20 @@
 # With thanks to https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash-script
 while test $# -gt 0; do
     case "$1" in
-        "-n" | "--nomigrations")
-            migrations=false
-            echo "Migrations will NOT run."
+        "-m" | "--migrations")
+            migrations=true
+            echo "Will run migrations"
             shift
             ;;
-        "-d" | "--rundev")
+        "-r" | "--rundev")
             rundev=true
             echo "Will run dev"
             shift
             ;;
         *)
-            migrations=true
-            echo "Migrations will run."
+            echo "Unknown argument $1"
             shift
-            rundev=false
-            echo "Will NOT run dev"
-            shift
+            ;;
     esac
 done
 

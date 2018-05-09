@@ -7,23 +7,23 @@
         {{csrf_field()}}
         <div class="form-group">
             <label for="name">Component View</label>
-            <input class="form-control" type="text" name="component_view" value="{{$default_view !== null ? $default_view : ''}}">
+            <input class="form-control" type="text" name="component_view" value="{{old('component_view')}}">
         </div>
         <div class="form-group">
             <label for="name">Trophy Name</label>
-            <input class="form-control" type="text" name="name">
+            <input class="form-control" type="text" name="name" value={{old('name')}}>
         </div>
         <div class="form-group">
             <label for="link">Link</label>
-            <input class="form-control" type="text" name="link">
+            <input class="form-control" type="text" name="link" value={{old('link')}}>
         </div>
         <div class="form-group">
             <label for="image_url">Image URL</label>
-            <input class="form-control" type="text" name="image_url">
+            <input class="form-control" type="text" name="image_url" value={{old('image_url')}}>
         </div>
         <div class="form-group">
             <label for="description">Short Description</label>
-            <input type="text" class="form-control" name="description">
+            <input type="text" class="form-control" name="description" value={{old('description')}}>
         </div>
         <div class="form-group">
             <label for="displays[]">Displays</label>

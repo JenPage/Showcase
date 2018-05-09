@@ -46,4 +46,15 @@ class Trophy extends Model
         }, false);
     }
 
+    /**
+     * Return name, or a generated name if real name is null.
+     * @return  string
+     */
+    public function getNameAttribute()
+    {
+        $path = explode('\\', __CLASS__);
+        $default = array_pop($path) . '_' . $this->attributes['id'];
+        return $this->attributes['name'] ?: $default;
+    }
+
 }

@@ -24,12 +24,12 @@ class TrophyRequest extends FormRequest
     public function rules()
     {
         $name = $this->method() === 'PUT'
-            ? 'required|string|max:255'
-            : 'required|string|unique:'.config('showcase.table_prefix').'trophies,name|max:255';
+            ? 'nullable|string|max:255'
+            : 'nullable|string|unique:'.config('showcase.table_prefix').'trophies,name|max:255';
 
         return [
             'name' => $name,
-            'component_view' => 'nullable|string',
+            'component_view' => 'string',
             'link' => 'nullable|url',
             'image_url' => 'nullable|url',
             'description' => 'nullable|string|max:'.config('showcase.description_length')

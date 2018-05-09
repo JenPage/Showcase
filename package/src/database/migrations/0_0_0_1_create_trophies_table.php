@@ -19,7 +19,7 @@ class CreateTrophiesTable extends Migration
             $table->string('name')->nullable();
             $table->string('image_url')->nullable();
             $table->string('link')->nullable();
-            $table->text('description', config('showcase.description_length'))->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

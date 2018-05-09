@@ -15,6 +15,8 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - automate including the assets in the test project
         - add validation rule for checking template files
         - finish adding flash messages for CRUD
+        - Vue multiselect for trophy display select
+            - combine with sort order selection
     - 1.1
         - Replace buttons with FontAwesome icons where appropriate
         - add ability to use a custom auth guard

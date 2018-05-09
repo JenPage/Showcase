@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Showcase\\": "src/"
+            "Showcase\\": "package/src/"
         }
     },
     "require-dev": {

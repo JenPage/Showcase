@@ -95,7 +95,7 @@ The display's template will be rendered automatically.
 
 ### Trophies
 
-If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy, $display)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if the trophy has no component view or `force_trophy_default` is set to `true`).
+If you look in the default display component views, you'll notice that they each call `showcaseTrophy($trophy, $display)`. This directive renders a trophy component view, which renders a trophy's component view (or the display's default trophy component view, if `force_trophy_default` is set to `true`).
 
 Both display and trophy component views can be customized.
 

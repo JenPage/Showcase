@@ -1,19 +1,16 @@
 {
-    "name": "jantho1990/showcase",
+    "name": "brokerexchange/showcase",
     "description": "A widget for showcasing cards of items in a panel or page.",
     "authors": [
         {
             "name": "Josh Anthony",
-            "email": "jantho1990@gmail.com"
+            "email": "janthony@brokerbin.com"
         }
     ],
     "require": {
         "laracasts/flash": "^3.0"
     },
     "autoload": {
-        "classmap": [
-
-        ],
         "psr-4": {
             "Showcase\\": "src/"
         }
@@ -27,5 +24,6 @@
                 "Showcase\\App\\Providers\\ShowcaseProvider"
             ]
         }
-    }
+    },
+    "license": "GPL-2.0-or-later"
 }

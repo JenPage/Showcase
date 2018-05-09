@@ -22,7 +22,7 @@ class Trophy extends Model
         parent::__construct($attributes);
 
         // We need to set this here so we can use the config value.
-        $this->table = config('showcase.table_prefix').$this->table;
+        $this->table = config('showcase.table_prefix', 'showcase_').$this->table;
     }
 
     /**
@@ -31,7 +31,7 @@ class Trophy extends Model
      */
     public function displays()
     {
-        return $this->belongsToMany('Showcase\App\Display', config('showcase.table_prefix').'display_trophy');
+        return $this->belongsToMany('Showcase\App\Display', config('showcase.table_prefix', 'showcase_').'display_trophy');
     }
 
     /**

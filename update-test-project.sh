@@ -28,7 +28,7 @@ composer update brokerexchange/showcase
 composer dump-autoload
 php artisan cache:clear
 php artisan view:clear
-php artisan vendor:publish --tag=showcase --force
+php artisan vendor:publish --tag=showcase-assets --force
 if [ "$migrations" = true ]; then 
     php artisan migrate:refresh --seed
     php artisan db:seed --class=ShowcaseDatabaseSeeder

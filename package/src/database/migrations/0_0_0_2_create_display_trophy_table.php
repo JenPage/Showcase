@@ -13,7 +13,7 @@ class CreateDisplayTrophyTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('showcase.table_prefix').'display_trophy', function (Blueprint $table) {
+        Schema::create(config('showcase.table_prefix', 'showcase_').'display_trophy', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('display_id');
             $table->integer('trophy_id');
@@ -27,6 +27,6 @@ class CreateDisplayTrophyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('showcase.table_prefix').'display_trophy');
+        Schema::dropIfExists(config('showcase.table_prefix', 'showcase_').'display_trophy');
     }
 }

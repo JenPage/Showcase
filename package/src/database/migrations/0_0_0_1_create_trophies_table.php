@@ -13,7 +13,7 @@ class CreateTrophiesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('showcase.table_prefix').'trophies', function (Blueprint $table) {
+        Schema::create(config('showcase.table_prefix', 'showcase_').'trophies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('component_view');
             $table->string('name')->nullable();
@@ -31,6 +31,6 @@ class CreateTrophiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('showcase.table_prefix').'trophies');
+        Schema::dropIfExists(config('showcase.table_prefix', 'showcase_').'trophies');
     }
 }

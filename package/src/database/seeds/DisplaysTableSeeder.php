@@ -22,7 +22,7 @@ class DisplaysTableSeeder extends Seeder
             'name' => 'Sample Sheet',
             'component_view' => 'display_sheet'
         ]); */
-        DB::table(config('showcase.table_prefix').'displays')->insert([
+        DB::table(config('showcase.table_prefix', 'showcase_').'displays')->insert([
             'name' => 'Sample Box',
             'component_view' => 'box',
             'default_trophy_component_view' => 'default',
@@ -30,7 +30,7 @@ class DisplaysTableSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
-        DB::table(config('showcase.table_prefix').'displays')->insert([
+        DB::table(config('showcase.table_prefix', 'showcase_').'displays')->insert([
             'name' => 'Sample Sheet',
             'component_view' => 'sheet',
             'default_trophy_component_view' => 'description',

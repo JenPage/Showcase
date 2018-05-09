@@ -22,15 +22,15 @@ class DisplayTrophyTableSeeder extends Seeder
             'name' => 'Sample Sheet',
             'component_view' => 'display_sheet'
         ]); */
-        DB::table(config('showcase.table_prefix').'display_trophy')->insert([
+        DB::table(config('showcase.table_prefix', 'showcase_').'display_trophy')->insert([
             'display_id' => 1,
             'trophy_id' => 1
         ]);
-        DB::table(config('showcase.table_prefix').'display_trophy')->insert([
+        DB::table(config('showcase.table_prefix', 'showcase_').'display_trophy')->insert([
             'display_id' => 1,
             'trophy_id' => 2
         ]);
-        DB::table(config('showcase.table_prefix').'display_trophy')->insert([
+        DB::table(config('showcase.table_prefix', 'showcase_').'display_trophy')->insert([
             'display_id' => 2,
             'trophy_id' => 3
         ]);

@@ -25,7 +25,7 @@ class DisplayRequest extends FormRequest
     {
         $name = $this->method() === 'PUT'
             ? 'required|string|max:255'
-            : 'required|string|unique:'.config('showcase.table_prefix').'displays,name|max:255';
+            : 'required|string|unique:'.config('showcase.table_prefix', 'showcase_').'displays,name|max:255';
 
         return [
             'name' => $name,

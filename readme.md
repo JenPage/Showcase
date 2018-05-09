@@ -31,10 +31,18 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 ```
 composer require brokerexchange/showcase
+```
+
+To include the assets, you have two options:
+    1. `@import "vendor/brokerexchange/showcase/resources/assets/build/public";` in your main stylesheet, which will include the styles as part of your app's compiled styles.
+    2. `php artisan vendor:publish --tag=showcase-assets` and link to `/vendor/showcase/public.css` in the `<head>`.
+
+If you want to publish all the assets:
+```
 php artisan vendor:publish --tag=showcase
 ```
 
-You will need to add a link to `/vendor/showcase/public.css` to your project's `head` section, wherever the rest of your stylesheets are being included. Alteratively, if you'd rather bundle the public styles to your app stylesheet, you can import them by add `@import "public/vendor/showcase/public";` to your main stylesheet.
+> TODO: Finish this section and fix things so you don't have to use public/vendor
 
 ### Install the package development environment
 

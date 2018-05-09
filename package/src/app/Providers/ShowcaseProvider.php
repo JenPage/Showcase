@@ -25,6 +25,10 @@ class ShowcaseProvider extends ServiceProvider
             __DIR__.'/../../resources/views' => resource_path('/views/vendor/showcase'),
         ], 'showcase');
 
+        $this->publishes([
+            __DIR__.'/../../resources/assets/build' => public_path('vendor/showcase'), 
+        ], 'showcase-assets');
+
         Blade::directive('showcaseDisplay', function ($display) {
             return "<?php \$__env->startComponent(\"showcase::public.components.display.{$display}->component_view\", ['display' => {$display}]); ?><?php echo \$__env->renderComponent(); ?>";
         });
@@ -43,7 +47,7 @@ class ShowcaseProvider extends ServiceProvider
             return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), ['trophy' => {$trophy}, 'display' => $displayStr]); ?><?php echo \$__env->renderComponent(); ?>";
         });
 
-        if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix').'displays"'))) > 0) {
+        if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {
             $displays = \Showcase\App\Display::with('trophies')->get();
             $trophies = \Showcase\App\Trophy::all();
             View::share('displays', $displays);

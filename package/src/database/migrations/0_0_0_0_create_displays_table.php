@@ -13,7 +13,7 @@ class CreateDisplaysTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('showcase.table_prefix').'displays', function (Blueprint $table) {
+        Schema::create(config('showcase.table_prefix', 'showcase_').'displays', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('component_view');
@@ -30,6 +30,6 @@ class CreateDisplaysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('showcase.table_prefix').'displays');
+        Schema::dropIfExists(config('showcase.table_prefix', 'showcase_').'displays');
     }
 }

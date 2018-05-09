@@ -1,0 +1,52 @@
+.showcase-display {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+.showcase-display.showcase-box {
+  height: 150px;
+  max-height: 150px;
+}
+
+.showcase-display.showcase-sheet {
+  height: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.showcase-trophy {
+  max-height: inherit;
+  width: auto;
+  height: 100%;
+  padding: 1rem 0.5rem;
+  margin: auto;
+}
+
+.showcase-trophy .showcase-trophy-image {
+  max-height: inherit;
+  width: auto;
+  height: 80%;
+}
+
+.showcase-trophy .showcase-trophy-image img {
+  width: auto;
+  height: 100%;
+}
+
+.showcase-trophy .showcase-trophy-title {
+  font-weight: bold;
+}
+

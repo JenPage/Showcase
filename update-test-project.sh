@@ -1,12 +1,36 @@
-if [ ! -d "./test-project/vendor/brokerexchange/showcase" ]; then
-    if [ ! -d "./test-project/vendor/brokerexchange" ]; then
-        mkdir ./test-project/vendor/brokerexchange
-    fi
-    cd test-project/vendor/brokerexchange
-    mkdir showcase showcase/src
-    cd ../../..
+# With thanks to https://stackoverflow.com/questions/7069682/how-to-get-arguments-with-flags-in-bash-script
+while test $# -gt 0; do
+    case "$1" in
+        "-m" | "--migrations")
+            migrations=true
+            echo "Will run migrations"
+            shift
+            ;;
+        "-r" | "--rundev")
+            rundev=true
+            echo "Will run dev"
+            shift
+            ;;
+        *)
+            echo "Unknown argument $1"
+            shift
+            ;;
+    esac
+done
+
+if [ "$rundev" = true ]; then
+    cd package/src
+    npm run dev
+    cd ../..
 fi
-cp -R ./src ./test-project/vendor/brokerexchange/showcase/src
-cp -R ./composer.json ./test-project/vendor/brokerexchange/showcase/composer.json
-cp -R ./composer.lock ./test-project/vendor/brokerexchange/showcase/composer.lock
-cp -R ./.gitignore ./test-project/vendor/brokerexchange/showcase/.gitignore
+cd test-project
+composer update brokerexchange/showcase
+composer dump-autoload
+php artisan cache:clear
+php artisan view:clear
+php artisan vendor:publish --tag=showcase-assets --force
+if [ "$migrations" = true ]; then 
+    php artisan migrate:refresh --seed
+    php artisan db:seed --class=ShowcaseDatabaseSeeder
+fi
+echo "Test project updated!"

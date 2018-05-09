@@ -1,0 +1,19 @@
+.showcase-trophy {
+    max-height: inherit;
+    width: auto;
+    height: 100%;
+    padding: 1rem 0.5rem;
+    margin: auto;
+    .showcase-trophy-image {
+        max-height: inherit;
+        width: auto;
+        height: 80%;
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+    .showcase-trophy-title {
+        font-weight: bold;
+    }
+}

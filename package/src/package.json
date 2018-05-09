@@ -1,0 +1,19 @@
+{
+  "name": "showcase",
+  "version": "1.0.0",
+  "description": "NPM for Showcase",
+  "main": "webpack.mix.js",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "laravel-mix": "^2.1.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

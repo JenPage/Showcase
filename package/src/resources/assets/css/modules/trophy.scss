@@ -1,0 +1,48 @@
+main.showcase-trophy-main {
+    margin: 0 auto;
+    h1 {
+        line-height: 1.4;
+    }
+    .showcase-trophy-container {
+        margin: 1rem auto 3rem;
+        &.showcase-trophy-show {
+            margin-top: 0;
+            .showcase-trophy-admin {
+                margin-top: 0;
+            }
+        }
+        .showcase-trophy-admin {
+            margin: 1rem 0 0.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            .showcase-trophy-admin-left {
+                span {
+                    font-style: italic;
+                }
+            }
+            .showcase-trophy-admin-right {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                .btn {
+                    margin: 0 0.35rem;
+                    transform: skew(-20deg);
+                    border-radius: 1px;
+                    span {
+                        display: block;
+                        transform: skew(20deg);
+                    }
+                }
+                .btn:last-child {
+                    margin: 0 0 0 0.35rem;
+                }
+            }
+        }
+        .showcase-trophy {
+            border: 1px solid hsl(0, 50%, 50%);
+        }
+    }
+}

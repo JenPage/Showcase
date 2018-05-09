@@ -18,9 +18,9 @@
     },
     "autoload": {
         "classmap": [
-            "src/database/seeds",
-            "src/database/factories",
-            "src/database/migrations"
+            "package/src/database/seeds",
+            "package/src/database/factories",
+            "package/src/database/migrations"
         ],
         "psr-4": {
             "Showcase\\": "package/src/"

@@ -13,7 +13,7 @@ if [ -d "./test-project" ]; then
     echo "Removed old test project."
 fi
 
-composer create-project laravel/laravel test-project 5.5.*
+composer create-project laravel/laravel test-project 5.4.*
 php ./edit-composer.php
 cd test-project
 sed -i '' "s/DB_HOST=127.0.0.1/DB_HOST=$db_host/g" .env

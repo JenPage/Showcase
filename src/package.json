@@ -5,7 +5,6 @@
   "main": "webpack.mix.js",
   "dependencies": {
     "bootstrap": "^4.1.1",
-    "hoek": "^5.0.3",
     "laravel-mix": "^2.1.11"
   },
   "devDependencies": {},

@@ -8,9 +8,20 @@
         }
     ],
     "require": {
-        "laracasts/flash": "^3.0"
+        "laracasts/flash": "^3.0",
+        "illuminate/database": "^5.4",
+        "doctrine/dbal": "^2.5",
+        "fzaninotto/faker": "^1.4",
+        "illuminate/filesystem": "^5.4",
+        "illuminate/pagination": "^5.4",
+        "nesbot/carbon": "^1.27"
     },
     "autoload": {
+        "classmap": [
+            "src/database/seeds",
+            "src/database/factories",
+            "src/database/migrations"
+        ],
         "psr-4": {
             "Showcase\\": "src/"
         }
@@ -24,6 +35,5 @@
                 "Showcase\\App\\Providers\\ShowcaseProvider"
             ]
         }
-    },
-    "license": "GPL-2.0-or-later"
+    }
 }

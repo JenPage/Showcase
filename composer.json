@@ -10,7 +10,7 @@
     "require": {
         "laracasts/flash": "^3.0",
         "illuminate/database": "^5.4",
-        "doctrine/dbal": "2.5",
+        "doctrine/dbal": "^2.5",
         "fzaninotto/faker": "^1.4",
         "illuminate/filesystem": "^5.4",
         "illuminate/pagination": "^5.4",

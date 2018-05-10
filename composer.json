@@ -18,12 +18,12 @@
     },
     "autoload": {
         "classmap": [
-            "package/src/database/seeds",
-            "package/src/database/factories",
-            "package/src/database/migrations"
+            "src/database/seeds",
+            "src/database/factories",
+            "src/database/migrations"
         ],
         "psr-4": {
-            "Showcase\\": "package/src/"
+            "Showcase\\": "src/"
         }
     },
     "require-dev": {

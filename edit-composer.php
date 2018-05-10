@@ -5,11 +5,8 @@ $composer = json_decode($composerFile, true);
 // var_dump($composer);
 $composer['repositories'] = json_decode('[
         {
-            "type": "path",
-            "url": "../package",
-            "options": {
-                "symlink": true
-            }
+            "type": "vcs",
+            "url": "../"
         }
     ]');
 $composer['minimum-stability'] = "dev";

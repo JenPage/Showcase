@@ -19,9 +19,9 @@ while test $# -gt 0; do
 done
 
 if [ "$rundev" = true ]; then
-    cd package/src
+    cd src
     npm run dev
-    cd ../..
+    cd ..
 fi
 cd test-project
 composer update brokerexchange/showcase

@@ -22,10 +22,17 @@ sed -i '' "s/DB_DATABASE=homestead/DB_DATABASE=$db_database/g" .env
 sed -i '' "s/DB_USERNAME=homestead/DB_USERNAME=$db_username/g" .env
 sed -i '' "s/DB_PASSWORD=secret/DB_PASSWORD=$db_password/g" .env
 sed -i '' "s|// \$this->call(UsersTableSeeder::class);|\$this->call(UsersTableSeeder::class);|" ./database/seeds/DatabaseSeeder.php
-sed -i '' "s|Laravel\\Tinker\\TinkerServiceProvider::class,|Laravel\\Tinker\\TinkerServiceProvider::class,\nShowcase\\App\\Providers\\ShowcaseProvider::class,|" ./config/app.php
+
+sed -i '' 's/Laravel\\Tinker\\TinkerServiceProvider::class,/Laravel\\Tinker\\TinkerServiceProvider::class,\
+        Showcase\\App\\Providers\\ShowcaseProvider::class,\
+        Laracasts\\Flash\\FlashServiceProvider::class,/' ./config/app.php
+
 cp ../UsersTableSeeder.php ./database/seeds/
-php artisan make:auth
 composer require brokerexchange/showcase=dev-feature/1.0
+composer dump-autoload
+echo "Pre auth"
+php artisan make:auth
+echo "Post auth"
 npm install
 cd ..
 bash update-test-project.sh --migrations --rundev

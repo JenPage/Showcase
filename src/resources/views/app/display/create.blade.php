@@ -21,6 +21,14 @@
         <input class="form-check-input" type="checkbox" name="force_trophy_default" value="1" {{old('force_trophy_default') !== '1' ?: 'checked'}}>
             <label class="form-check-label" for="force_trophy_default">Force Default Trophy View</label>
         </div>
+        <div class="form-group">
+            <label for="trophies[]">Trophies</label>
+            <select class="form-control" name="trophies[]" id="" multiple="">
+                @foreach($trophies as $trophy)
+                <option value="{{$trophy->id}}">{{$trophy->name}}</option>
+                @endforeach
+            </select>
+        </div>
         <button class="btn btn-success btn-block" type="submit">Save</button>
     </form>
 </main>

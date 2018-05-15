@@ -59,11 +59,11 @@ class ShowcaseProvider extends ServiceProvider
                 ?: file_exists('../../resources/views/public/components/trophy/' . $value . '.blade.php');
         });
 
-        Validator::replacer('display_exists', function ($message, $attribute, $rule, $parameters) {
+        Validator::replacer('display_exists', function ($message, $attribute, $rule, $parameters, $validator) {
             return str_replace(['value'], [$validator->getData()[$attribute]], $message);
         });
 
-        Validator::replacer('trophy_exists', function ($message, $attribute, $rule, $parameters) {
+        Validator::replacer('trophy_exists', function ($message, $attribute, $rule, $parameters, $validator) {
             return str_replace(['value'], [$validator->getData()[$attribute]], $message);
         });
 

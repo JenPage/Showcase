@@ -66,8 +66,12 @@ class ShowcaseProvider extends ServiceProvider
         });
 
         if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {
-            $displays = \Showcase\App\Display::with('trophies')->get();
-            $trophies = \Showcase\App\Trophy::all();
+            $displays = \Showcase\App\Display::with('trophies')->get()->filter(function ($display) {
+                return \Showcase\Showcase::templateFileExists($display->component_view, 'display');
+            });
+            $trophies = \Showcase\App\Trophy::all()->filter(function ($trophy) {
+                return \Showcase\Showcase::templateFileExists($trophy->component_view, 'trophy');
+            });
             View::share('displays', $displays);
             View::share('trophies', $trophies);
         }

@@ -26,10 +26,6 @@ class DisplayController extends Controller
      */
     public function create()
     {
-        $trophies = Trophy::all()->filter(function ($trophy) {
-            return \Showcase\Showcase::templateFileExists($trophy->component_view, 'trophy');
-        });
-
         return view('showcase::app.display.create', compact('trophies'));
     }
 
@@ -70,8 +66,6 @@ class DisplayController extends Controller
      */
     public function edit(Display $display)
     {
-        $trophies = Trophy::all();
-
         return view('showcase::app.display.edit', compact('display', 'trophies'));
     }
 

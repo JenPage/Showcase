@@ -32,8 +32,6 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 ### Install the package
 
-> This is not on Packagist yet, so these instructions don't work!
-
 ```
 composer require brokerexchange/showcase
 ```

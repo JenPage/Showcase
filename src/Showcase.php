@@ -42,7 +42,7 @@ class Showcase
         if ($type !== 'display' && $type !== 'trophy') {
             throw new \Exception("Invalid type ($type).");
         }
-        return file_exists(base_path() . "resources/views/vendor/showcase/public/components/$type/$value.blade.php")
-            ?: file_exists("../../resources/views/public/components/$type/$value.blade.php");
+        return file_exists(base_path() . "resources/views/vendor/showcase/public/components/$type/$file.blade.php")
+            ?: file_exists("../../resources/views/public/components/$type/$file.blade.php");
     }
 }

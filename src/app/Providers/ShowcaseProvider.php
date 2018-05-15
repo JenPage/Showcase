@@ -50,11 +50,17 @@ class ShowcaseProvider extends ServiceProvider
         });
 
         Validator::extend('display_exists', function ($attribute, $value, $parameters, $validator) {
+            $validator->after(function ($validator) {
+                $validator->messages()->add(['display_exists' => 'The display component file :attribute does not exist.']);
+            });
             return file_exists(base_path() . 'resources/views/vendor/showcase/public/components/display' . $value . '.blade.php')
                 ?: file_exists('../../resources/views/public/components/display/' . $value . '.blade.php');
         });
 
         Validator::extend('trophy_exists', function ($attribute, $value, $parameters, $validator) {
+            $validator->after(function ($validator) {
+                $validator->messages()->add(['trophy_exists' => 'The trophy component file :attribute does not exist.']);
+            });
             return file_exists(base_path() . 'resources/views/vendor/showcase/public/components/trophy' . $value . '.blade.php')
                 ?: file_exists('../../resources/views/public/components/trophy/' . $value . '.blade.php');
         });

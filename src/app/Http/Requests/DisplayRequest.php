@@ -49,4 +49,14 @@ class DisplayRequest extends FormRequest
             });
         });
     }
+
+    /**
+     * Add custom error messages.
+     */
+    public function messages()
+    {
+        return [
+            'display_exists' => 'The display component file :attribute.php does not exist.'
+        ];
+    }
 }

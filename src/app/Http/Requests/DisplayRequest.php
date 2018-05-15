@@ -29,8 +29,8 @@ class DisplayRequest extends FormRequest
 
         return [
             'name' => $name,
-            'component_view' => 'required|string',
-            'default_trophy_component_view' => 'required|string',
+            'component_view' => 'required|string|display_exists',
+            'default_trophy_component_view' => 'required|string|trophy_exists',
             'force_trophy_default' => 'nullable|boolean'
         ];
     }

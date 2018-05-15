@@ -47,6 +47,16 @@ class ShowcaseProvider extends ServiceProvider
             return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), ['trophy' => {$trophy}, 'display' => $displayStr]); ?><?php echo \$__env->renderComponent(); ?>";
         });
 
+        Validator::extend('display_exists', function ($attribute, $value, $parameters, $validator) {
+            return file_exists(base_path() . 'resources/views/vendor/showcase/public/components/display' . $value . '.blade.php')
+                ?: file_exists('../../resources/views/public/components/display/' . $value . '.blade.php');
+        });
+
+        Validator::extend('trophy_exists', function ($attribute, $value, $parameters, $validator) {
+            return file_exists(base_path() . 'resources/views/vendor/showcase/public/components/trophy' . $value . '.blade.php')
+                ?: file_exists('../../resources/views/public/components/trophy/' . $value . '.blade.php');
+        });
+
         if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {
             $displays = \Showcase\App\Display::with('trophies')->get();
             $trophies = \Showcase\App\Trophy::all();

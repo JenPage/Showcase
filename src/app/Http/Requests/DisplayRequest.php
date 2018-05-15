@@ -56,7 +56,8 @@ class DisplayRequest extends FormRequest
     public function messages()
     {
         return [
-            'display_exists' => 'The display component file :attribute.php does not exist.'
+            'display_exists' => 'The display component file :value.php does not exist.',
+            'trophy_exists' => 'The trophy component file :value.php does not exist.'
         ];
     }
 }

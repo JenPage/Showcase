@@ -57,7 +57,7 @@ class TrophyRequest extends FormRequest
     public function messages()
     {
         return [
-            'trophy_exists' => 'The trophy component file :attribute.php does not exist.'
+            'trophy_exists' => 'The trophy component file :value.php does not exist.'
         ];
     }
 }

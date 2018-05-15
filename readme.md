@@ -25,6 +25,8 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - ~add way to mass-assign trophies to a display (instead of one at a time)~
         - add Trophy Groups
             - and the ability to assign all Trophy Group members to a Display
+        - add Display Groups
+            - and the ability to assign a new Trophy to all Displays in a group
 
 ## Installation
 

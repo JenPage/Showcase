@@ -29,8 +29,8 @@ class DisplayRequest extends FormRequest
 
         return [
             'name' => $name,
-            'component_view' => 'required|string',
-            'default_trophy_component_view' => 'required|string',
+            'component_view' => 'required|string|display_exists',
+            'default_trophy_component_view' => 'required|string|trophy_exists',
             'force_trophy_default' => 'nullable|boolean'
         ];
     }
@@ -48,5 +48,16 @@ class DisplayRequest extends FormRequest
                 flash()->error($message);
             });
         });
+    }
+
+    /**
+     * Add custom error messages.
+     */
+    public function messages()
+    {
+        return [
+            'display_exists' => __('showcase::validation.display_exists'),
+            'trophy_exists' => __('showcase::validation.trophy_exists')
+        ];
     }
 }

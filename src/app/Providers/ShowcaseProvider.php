@@ -3,6 +3,7 @@
 namespace Showcase\App\Providers;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,7 @@ class ShowcaseProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadRoutesFrom(__DIR__.'/../../routes.php');
+        $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', 'showcase');
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'showcase');
 
         $this->publishes([
@@ -47,9 +49,29 @@ class ShowcaseProvider extends ServiceProvider
             return "<?php \$__env->startComponent(\"showcase::public.components.trophy.\".($showcaseStr), ['trophy' => {$trophy}, 'display' => $displayStr]); ?><?php echo \$__env->renderComponent(); ?>";
         });
 
+        Validator::extend('display_exists', function ($attribute, $value, $parameters, $validator) {
+            return \Showcase\Showcase::templateFileExists($value, 'display');
+        });
+
+        Validator::extend('trophy_exists', function ($attribute, $value, $parameters, $validator) {
+            return \Showcase\Showcase::templatefileExists($value, 'trophy');
+        });
+
+        Validator::replacer('display_exists', function ($message, $attribute, $rule, $parameters, $validator) {
+            return str_replace([':value'], [$validator->getData()[$attribute]], $message);
+        });
+
+        Validator::replacer('trophy_exists', function ($message, $attribute, $rule, $parameters, $validator) {
+            return str_replace([':value'], [$validator->getData()[$attribute]], $message);
+        });
+
         if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {
-            $displays = \Showcase\App\Display::with('trophies')->get();
-            $trophies = \Showcase\App\Trophy::all();
+            $displays = \Showcase\App\Display::with('trophies')->get()->filter(function ($display) {
+                return \Showcase\Showcase::templateFileExists($display->component_view, 'display');
+            });
+            $trophies = \Showcase\App\Trophy::all()->filter(function ($trophy) {
+                return \Showcase\Showcase::templateFileExists($trophy->component_view, 'trophy');
+            });
             View::share('displays', $displays);
             View::share('trophies', $trophies);
         }

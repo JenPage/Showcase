@@ -26,4 +26,23 @@ class Showcase
         
         return $display;
     }
+
+    /**
+     * Check to see if a template file exists.
+     * 
+     * Check to see if a template file exists, either in the vendor path or the 
+     * published user path.
+     * 
+     * @param  string  $file
+     * @param  string  $type
+     * @return  boolean
+     */
+    public static function templateFileExists($file, $type)
+    {
+        if ($type !== 'display' && $type !== 'trophy') {
+            throw new \Exception("Invalid type ($type).");
+        }
+        return file_exists(base_path() . "/resources/views/vendor/showcase/public/components/$type/$file.blade.php")
+            ?: file_exists(__DIR__."/resources/views/public/components/$type/$file.blade.php");
+    }
 }

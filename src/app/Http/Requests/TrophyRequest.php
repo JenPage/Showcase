@@ -29,7 +29,7 @@ class TrophyRequest extends FormRequest
 
         return [
             'name' => $name,
-            'component_view' => 'string',
+            'component_view' => 'string|trophy_exists',
             'link' => 'nullable|url',
             'image_url' => 'nullable|url',
             'description' => 'nullable|string|max:'.config('showcase.description_length', 55)
@@ -49,5 +49,15 @@ class TrophyRequest extends FormRequest
                 flash()->error($message);
             });
         });
+    }
+
+    /**
+     * Add custom error messages.
+     */
+    public function messages()
+    {
+        return [
+            'trophy_exists' => __('showcase::validation.trophy_exists')
+        ];
     }
 }

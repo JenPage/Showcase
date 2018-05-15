@@ -3,6 +3,7 @@
 namespace Showcase\App\Http\Controllers;
 
 use Showcase\App\Display;
+use Showcase\App\Trophy;
 use Illuminate\Http\Request;
 use Showcase\App\Http\Requests\DisplayRequest;
 
@@ -25,7 +26,7 @@ class DisplayController extends Controller
      */
     public function create()
     {
-        return view('showcase::app.display.create');
+        return view('showcase::app.display.create', compact('trophies'));
     }
 
     /**
@@ -38,9 +39,12 @@ class DisplayController extends Controller
     {
         $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
         
-        Display::create($request->all());
+        $display = Display::create($request->except('trophies'));
 
-        return redirect()->route('displays.index');
+        $display->trophies()->detach();
+        $display->trophies()->attach($request->trophies);
+
+        return redirect()->route('displays.show', compact('display'));
     }
 
     /**
@@ -62,7 +66,7 @@ class DisplayController extends Controller
      */
     public function edit(Display $display)
     {
-        return view('showcase::app.display.edit', compact('display'));
+        return view('showcase::app.display.edit', compact('display', 'trophies'));
     }
 
     /**
@@ -76,7 +80,10 @@ class DisplayController extends Controller
     {
         $request->merge(['force_trophy_default' => isset($request->force_trophy_default) ? true : false]);
 
-        $display->update($request->all());
+        $display->update($request->except('trophies'));
+
+        $display->trophies()->detach();
+        $display->trophies()->attach($request->trophies);
 
         return redirect()->route('displays.show', compact('display'));
     }

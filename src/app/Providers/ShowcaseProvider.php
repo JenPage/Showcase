@@ -60,11 +60,11 @@ class ShowcaseProvider extends ServiceProvider
         });
 
         Validator::replacer('display_exists', function ($message, $attribute, $rule, $parameters) {
-            return str_replace(['value'], [$this->data[$attribute]], $message);
+            return str_replace(['value'], [$validator->getData()[$attribute]], $message);
         });
 
         Validator::replacer('trophy_exists', function ($message, $attribute, $rule, $parameters) {
-            return str_replace(['value'], [$this->data[$attribute]], $message);
+            return str_replace(['value'], [$validator->getData()[$attribute]], $message);
         });
 
         if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {

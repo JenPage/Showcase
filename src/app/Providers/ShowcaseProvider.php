@@ -59,6 +59,14 @@ class ShowcaseProvider extends ServiceProvider
                 ?: file_exists('../../resources/views/public/components/trophy/' . $value . '.blade.php');
         });
 
+        Validator::replacer('display_exists', function ($message, $attribute, $rule, $parameters) {
+            return str_replace(['value'], [$this->data[$attribute]], $message);
+        });
+
+        Validator::replacer('trophy_exists', function ($message, $attribute, $rule, $parameters) {
+            return str_replace(['value'], [$this->data[$attribute]], $message);
+        });
+
         if (count(\DB::select(\DB::raw('SHOW TABLES LIKE "' . config('showcase.table_prefix', 'showcase_').'displays"'))) > 0) {
             $displays = \Showcase\App\Display::with('trophies')->get();
             $trophies = \Showcase\App\Trophy::all();

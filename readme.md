@@ -6,14 +6,14 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
 
 ## Todos:
     - get to 1.0
-        - add the admin section
-        - create components for dropping in the view boxes
+        - ~add the admin section~
+        - ~create components for dropping in the view boxes~
         - add sort order functionality within displays for trophies
         - unit tests
         - show trophies associated with a display on the show form
         - show displays associated with a trophy on the show form
         - automate including the assets in the test project
-        - add validation rule for checking template files
+        - ~add validation rule for checking template files~
         - finish adding flash messages for CRUD
         - Vue multiselect for trophy display select
             - combine with sort order selection
@@ -22,13 +22,15 @@ A Laravel package which adds the ability to create "showcases", or view boxes wh
         - Replace buttons with FontAwesome icons where appropriate
         - add ability to use a custom auth guard
         - add image uploader that takes care of uploading images to the CDN
-        - add way to mass-assign trophies to a display (instead of one at a time)
+        - ~add way to mass-assign trophies to a display (instead of one at a time)~
+        - add Trophy Groups
+            - and the ability to assign all Trophy Group members to a Display
+        - add Display Groups
+            - and the ability to assign a new Trophy to all Displays in a group
 
 ## Installation
 
 ### Install the package
-
-> This is not on Packagist yet, so these instructions don't work!
 
 ```
 composer require brokerexchange/showcase

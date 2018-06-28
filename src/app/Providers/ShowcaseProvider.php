@@ -32,7 +32,11 @@ class ShowcaseProvider extends ServiceProvider
         ], 'showcase-assets');
 
         Blade::directive('showcaseDisplay', function ($display) {
-            return "<?php \$__env->startComponent(\"showcase::public.components.display.{$display}->component_view\", ['display' => {$display}]); ?><?php echo \$__env->renderComponent(); ?>";
+            return "<?php
+            if ({$display} !== '') {
+                \$__env->startComponent(\"showcase::public.components.display.{$display}->component_view\", ['display' => {$display}]);
+                echo \$__env->renderComponent();
+            } ?>";
         });
 
         Blade::directive('showcaseTrophy', function ($expression) {

@@ -37,10 +37,24 @@ class Showcase
      */
     public static function templateFileExists($file, $type)
     {
+
         if ($type !== 'display' && $type !== 'trophy') {
             throw new \Exception("Invalid type ($type).");
         }
-        return file_exists(base_path() . "/resources/views/vendor/showcase/public/components/$type/$file.blade.php")
-            ?: file_exists(__DIR__."/resources/views/public/components/$type/$file.blade.php");
+
+        if(file_exists(base_path() . "/resources/views/vendor/showcase/public/components/$type/$file.blade.php")){
+
+            return base_path() . "/resources/views/vendor/showcase/public/components/$type/$file.blade.php";
+
+        } elseif(file_exists(__DIR__."/resources/views/public/components/$type/$file.blade.php")){
+
+            return __DIR__."/resources/views/public/components/$type/$file.blade.php";
+
+        } else{
+
+            flash()->error('Missing the template file named '. $file);
+            return base_path() . "/resources/views/vendor/showcase/public/components/$type/default.blade.php";
+        }
+
     }
 }

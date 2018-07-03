@@ -6,6 +6,6 @@
         <span>{{$trophy->name}}</span>
     </div>
     <div class="showcase-trophy-description">
-        {{$trophy->description}}
+        {!! $trophy->description !!}
     </div>
 </div>

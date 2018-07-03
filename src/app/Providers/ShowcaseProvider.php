@@ -55,19 +55,25 @@ class ShowcaseProvider extends ServiceProvider
                 ? explode(',', str_replace(' ', '', $expression))
                 : [$expression, null];
 
-            if(view()->exists("'showcase::public.components.trophy.{$display}->component_view")){
-
-                $showcaseStr = $display === null
-                    ? "{$trophy}->component_view"
-                    : "{$display}->force_trophy_default == true ? {$display}->default_trophy_component_view : {$trophy}->component_view";
-
-            }else{
-
-                $showcaseStr = 'default';
-            }
-
             $displayStr = $display !== null ? "\$display" : '""';
-            return "<?php \$__env->startComponent(\"showcase::public.components.trophy.$showcaseStr\", ['trophy' => {$trophy}, 'display' => $displayStr]); ?><?php echo \$__env->renderComponent(); ?>";
+
+                return "<?php
+
+                    if(view()->exists(\"showcase::public.components.trophy.{$trophy}->component_view\")){
+
+                        \$__env->startComponent(\"showcase::public.components.trophy.{$trophy}->component_view\", ['trophy' => {$trophy}, 'display' => $displayStr]);
+
+                        echo \$__env->renderComponent();
+
+                    }else{
+
+                      \$__env->startComponent(\"showcase::public.components.trophy.description_link\", ['trophy' => {$trophy}, 'display' => $displayStr]);
+
+                        echo \$__env->renderComponent();
+                    }
+
+                 ?>";
+
 
         });
 
